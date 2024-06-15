@@ -129,10 +129,9 @@
                                 <select class="form-control" name="type">
                                     <option value="Tipe 1" {{ old('type') == 'Tipe 1' ? 'selected' : '' }}>Tipe 1</option>
                                     <option value="Tipe 2" {{ old('type') == 'Tipe 2' ? 'selected' : '' }}>Tipe 2</option>
-                                    <option value="Tipe 3" {{ old('type') == 'Tipe 2' ? 'selected' : '' }}>Tipe </option>
-                                    <option value="Tipe 4" {{ old('type') == 'Tipe 2' ? 'selected' : '' }}>Tipe 2</option>
+                                    <option value="Tipe 3" {{ old('type') == 'Tipe 3' ? 'selected' : '' }}>Tipe 3</option>
+                                    <option value="Tipe 4" {{ old('type') == 'Tipe 4' ? 'selected' : '' }}>Tipe 4</option>
                                 </select>
-
                             </div>
                             <label for="ktp">Foto KTP</label>
                             <input type="file" name="ktp" id="ktp" class="form-control"

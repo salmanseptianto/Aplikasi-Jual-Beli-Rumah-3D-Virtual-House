@@ -409,51 +409,51 @@ class HomeController extends Controller
 
         return view('home.pembayaran', $data);
     }
+
     public function pembayaransimpan(Request $request)
     {
-        $namabukti = $request->file('bukti')->getClientOriginalName();
-        $namafix = date("YmdHis") . $namabukti;
-        $request->file('bukti')->move('foto', $namafix);
+        // Validate the request to accept image and PDF files
+        $request->validate([
+            'bukti' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'ktp' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'kk' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'suratnikah' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'npwp' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'bpjs' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'sk' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'gaji' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'rekening' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'type' => 'required|string',
+        ]);
 
+        // Function to save files and return the new filename
+        function saveFile($file, $prefix)
+        {
+            $originalName = $file->getClientOriginalName();
+            $newName = date("YmdHis") . $prefix . $originalName;
+            $file->move('foto', $newName);
+            return $newName;
+        }
+
+        // Save all files with unique names
+        $namafix = saveFile($request->file('bukti'), '_bukti_');
+        $nama1 = saveFile($request->file('ktp'), '_ktp_');
+        $nama2 = saveFile($request->file('kk'), '_kk_');
+        $nama3 = saveFile($request->file('suratnikah'), '_suratnikah_');
+        $nama4 = saveFile($request->file('npwp'), '_npwp_');
+        $nama5 = saveFile($request->file('bpjs'), '_bpjs_');
+        $nama6 = saveFile($request->file('sk'), '_sk_');
+        $nama7 = saveFile($request->file('gaji'), '_gaji_');
+        $nama8 = saveFile($request->file('rekening'), '_rekening_');
+
+        // Get the rest of the input data
         $idpembelian = $request->input('idpembelian');
         $nama = $request->input('nama');
         $tanggaltransfer = $request->input('tanggaltransfer');
         $tanggal = date("Y-m-d");
-
-        $ktp = $request->file('ktp')->getClientOriginalName();
-        $nama1 = date("YmdHis") . $ktp;
-        $request->file('ktp')->move('foto', $nama1);
-
-        $kk = $request->file('kk')->getClientOriginalName();
-        $nama2 = date("YmdHis") . $kk;
-        $request->file('kk')->move('foto', $nama2);
-
-        $suratnikah = $request->file('suratnikah')->getClientOriginalName();
-        $nama3 = date("YmdHis") . $suratnikah;
-        $request->file('suratnikah')->move('foto', $nama3);
-
-        $npwp = $request->file('npwp')->getClientOriginalName();
-        $nama4 = date("YmdHis") . $npwp;
-        $request->file('npwp')->move('foto', $nama4);
-
-        $bpjs = $request->file('bpjs')->getClientOriginalName();
-        $nama5 = date("YmdHis") . $bpjs;
-        $request->file('bpjs')->move('foto', $nama5);
-
-        $sk = $request->file('sk')->getClientOriginalName();
-        $nama6 = date("YmdHis") . $sk;
-        $request->file('sk')->move('foto', $nama6);
-
-        $gaji = $request->file('gaji')->getClientOriginalName();
-        $nama7 = date("YmdHis") . $gaji;
-        $request->file('gaji')->move('foto', $nama7);
-
-        $rekening = $request->file('rekening')->getClientOriginalName();
-        $nama8 = date("YmdHis") . $rekening;
-        $request->file('rekening')->move('foto', $nama8);
-
         $type = $request->input('type');
 
+        // Prepare the data array for insertion
         $data = [
             'idpembelian' => $idpembelian,
             'nama' => $nama,
@@ -468,97 +468,23 @@ class HomeController extends Controller
             'sk' => $nama6,
             'gaji' => $nama7,
             'rekening' => $nama8,
-            'type' => 'asdf',
+            'type' => $type,
         ];
 
+        // Insert data into the 'pembayaran' table
         DB::table('pembayaran')->insert($data);
 
+        // Update the status in the 'pembelian' table
         DB::table('pembelian')->where('idpembelian', $idpembelian)->update([
             'statusbeli' => 'Sudah Upload Bukti Pembayaran',
         ]);
+
+        // Flash a success message to the session
         Session()->flash('alert', 'Terima kasih, pembayaran anda berhasil. Mohon tunggu konfirmasi dari admin 🙏');
 
+        // Redirect to the home/riwayat page
         return redirect('home/riwayat');
     }
-
-    // public function pembayaransimpan(Request $request)
-    // {
-    //     // Validate the request to accept image and PDF files
-    //     $request->validate([
-    //         'bukti' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //         'ktp' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //         'kk' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //         'suratnikah' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //         'npwp' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //         'bpjs' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //         'sk' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //         'gaji' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //         'rekening' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //         'type' => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
-    //     ]);
-
-    //     // Function to save files and return the new filename
-    //     function saveFile($file, $prefix)
-    //     {
-    //         $originalName = $file->getClientOriginalName();
-    //         $newName = date("YmdHis") . $prefix . $originalName;
-    //         $file->move('foto', $newName);
-    //         return $newName;
-    //     }
-
-    //     // Save all files with unique names
-    //     $namafix = saveFile($request->file('bukti'), '_bukti_');
-    //     $nama1 = saveFile($request->file('ktp'), '_ktp_');
-    //     $nama2 = saveFile($request->file('kk'), '_kk_');
-    //     $nama3 = saveFile($request->file('suratnikah'), '_suratnikah_');
-    //     $nama4 = saveFile($request->file('npwp'), '_npwp_');
-    //     $nama5 = saveFile($request->file('bpjs'), '_bpjs_');
-    //     $nama6 = saveFile($request->file('sk'), '_sk_');
-    //     $nama7 = saveFile($request->file('gaji'), '_gaji_');
-    //     $nama8 = saveFile($request->file('rekening'), '_rekening_');
-    //     $nama9 = saveFile($request->file('type'), '_type_');
-   
-
-    //     // Get the rest of the input data
-    //     $idpembelian = $request->input('idpembelian');
-    //     $nama = $request->input('nama');
-    //     $tanggaltransfer = $request->input('tanggaltransfer');
-    //     $tanggal = date("Y-m-d");
-    //     $kelamin = $request->input('kelamin');
-
-    //     // Prepare the data array for insertion
-    //     $data = [
-    //         'idpembelian' => $idpembelian,
-    //         'nama' => $nama,
-    //         'tanggaltransfer' => $tanggaltransfer,
-    //         'tanggal' => $tanggal,
-    //         'bukti' => $namafix,
-    //         'ktp' => $nama1,
-    //         'kk' => $nama2,
-    //         'suratnikah' => $nama3,
-    //         'npwp' => $nama4,
-    //         'bpjs' => $nama5,
-    //         'sk' => $nama6,
-    //         'gaji' => $nama7,
-    //         'rekening' => $nama8,
-    //         'type' => $nama9,
-
-    //     ];
-
-    //     // Insert data into the 'pembayaran' table
-    //     DB::table('pembayaran')->insert($data);
-
-    //     // Update the status in the 'pembelian' table
-    //     DB::table('pembelian')->where('idpembelian', $idpembelian)->update([
-    //         'statusbeli' => 'Sudah Upload Bukti Pembayaran',
-    //     ]);
-
-    //     // Flash a success message to the session
-    //     Session()->flash('alert', 'Terima kasih, pembayaran anda berhasil. Mohon tunggu konfirmasi dari admin 🙏');
-
-    //     // Redirect to the home/riwayat page
-    //     return redirect('home/riwayat');
-    // }
 
     public function selesai(Request $request)
     {
