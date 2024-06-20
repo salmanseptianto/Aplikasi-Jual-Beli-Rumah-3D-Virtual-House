@@ -1,7 +1,8 @@
 @extends('home.templates.index')
 
 @section('page-content')
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ url('foto/home2.jpg') }}');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ url('foto/home2.jpg') }}');"
+        data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -23,12 +24,12 @@
                     <div class="col-md-4 d-flex">
                         <a href="{{ url('home/isiblog/' . $p->idblog) }}">
                             <div class="product ftco-animate">
-                                <div class="img d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('foto/' . $p->foto) }}');">
+                                <div class="img d-flex align-items-center justify-content-center"
+                                    style="background-image: url('{{ asset('foto/' . $p->foto) }}');">
                                 </div>
                                 <div class="text text-center">
-                                    <h2>{{  Str::limit($p->judul, 40) }}</h2>
+                                    <h2>{{ Str::limit($p->judul, 40) }}</h2>
                                     <span>{{ $p->tanggal }}</span>
-                                    {{-- <p><span class="price">{{ Str::limit($p->deskripsi, 40) }}</span></p> --}}
                                 </div>
                             </div>
                         </a>

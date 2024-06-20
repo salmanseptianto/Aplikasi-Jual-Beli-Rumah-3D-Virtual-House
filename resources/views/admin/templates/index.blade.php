@@ -50,7 +50,7 @@
                     <i class="fas fa-fw fa-book text-white"></i>
                     <span>Dashboard</span></a>
             </li>
-            <hr class="sidebar-divider">
+            {{-- <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ url('admin/properti') }}">
                     <i class="fas fa-fw fa-pen text-white"></i>
@@ -61,7 +61,7 @@
                 <a class="nav-link text-white" href="{{ url('admin/pembelian') }}">
                     <i class="fas fa-fw fa-home text-white"></i>
                     <span>Transaksi</span></a>
-            </li>
+            </li> --}}
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ url('admin/pengguna') }}">
