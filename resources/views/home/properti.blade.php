@@ -22,15 +22,61 @@
         </a>
     </div>
 
-    <form class="text-center mt-5" action="{{ route('properti.search') }}" method="GET">
-        <div class="input-group">
-            <input type="text" class="form-control" name="search" placeholder="Cari properti..."
-                value="{{ request()->input('search') }}">
-            <div class="input-group-append">
-                <button class="btn btn-info" type="submit">Cari</button>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+                            <label class="btn btn-outline-success">
+                                <input type="radio" name="filter" id="jual" autocomplete="off" value="jual"> Jual
+                            </label>
+                            <label class="btn btn-outline-success">
+                                <input type="radio" name="filter" id="sewa" autocomplete="off" value="sewa"> Sewa
+                            </label>
+                            <label class="btn btn-outline-success">
+                                <input type="radio" name="filter" id="baru" autocomplete="off" value="baru">
+                                Property Baru
+                            </label>
+                        </div>
+                        <form action="{{ route('properti.search') }}" method="GET">
+                            <div class="form-row align-items-center">
+                                <div class="col-auto">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-home"></i></div>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Tipe Rumah">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-money"></i></div>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Range Harga">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" name="search"
+                                            value="{{ request()->input('search') }}"
+                                            placeholder="Cari berdasarkan lokasi, ID, Property">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-success mb-2">Cari</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </form>
+    </div>
+
+
+
 
     <section class="ftco-section">
         @if (Session::has('alert'))
@@ -59,11 +105,25 @@
                                     style="background-image: url('{{ asset('foto/' . $p->fotoproperti) }}');">
                                 </div>
                                 <div class="text text-center">
-                                    <h2>{{ $p->namaproperti }}</h2>
-                                    <p class="mb-0">
-                                        <span class="price price-sale"></span>
-                                        <span class="price">Rp {{ number_format($p->hargaproperti) }}</span>
-                                    </p>
+                                    <p class="property-title">{{ $p->namaproperti }}</p>
+                                    <p class="property-price">IDR. {{ number_format($p->hargaproperti, 0, ',', '.') }}</p>
+                                </div>
+                                <div class="property-info">
+                                    <div class="property-feature">
+                                        <i class="fa fa-bed" aria-hidden="true"></i>
+                                        <span class="property-bedrooms">{{ $p->kamartidur }} Kamar Tidur</span>
+                                    </div>
+                                    <div class="property-feature">
+                                        <i class="fa fa-bath" aria-hidden="true"></i>
+                                        <span class="property-bathrooms">{{ $p->kamarmandi }} Kamar Mandi</span>
+                                    </div>
+                                    <div class="property-feature">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                        <span class="property-area">{{ $p->tipe }}m<sup>2</sup></span>
+                                    </div>
+                                </div>
+
+                                <div class="text text-center">
                                     <a href="{{ url('home/detail/' . $p->idproperti) }}">
                                         <button type="submit" class="btn btn-danger float-none">Buy Now</button>
                                     </a>
@@ -95,7 +155,8 @@
                                 </li>
                             @endfor
                             @if ($currentPage < $lastPage)
-                                <li class="page-item"><a class="page-link" href="{{ $propertis->nextPageUrl() }}">Next</a>
+                                <li class="page-item"><a class="page-link"
+                                        href="{{ $propertis->nextPageUrl() }}">Next</a>
                                 </li>
                             @endif
                         </ul>

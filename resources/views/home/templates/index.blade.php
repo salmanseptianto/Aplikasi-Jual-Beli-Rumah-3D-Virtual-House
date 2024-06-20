@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <link rel="stylesheet" href="{{ asset('assets/home/css/cursor.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/home/css/properti.css') }}">
 </head>
 <div class="circle"></div>
 <div class="circle"></div>
