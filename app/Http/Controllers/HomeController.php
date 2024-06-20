@@ -6,13 +6,18 @@ use App\Models\Properti;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class HomeController extends Controller
 {
     public function cari(Request $request)
     {
         $search = $request->input('search');
+        $filter = $request->input('filter');
+        $perumahan = $request->input('perumahan');
+        $tipe = $request->input('tipe');
+        $range_harga = $request->input('range_harga');
 
-        $query = Properti::where('checkout_status', 0);
+        $query = Properti::where('perumahan', $perumahan !== null ? $perumahan : 0 );
 
         if ($search) {
             $query->where(function ($q) use ($search) {
@@ -20,12 +25,25 @@ class HomeController extends Controller
                     ->orWhere('deskripsiproperti', 'LIKE', "%$search%");
             });
         }
+       
+        if ($tipe) {
+            $tipeRange = explode('-', $tipe);
+            if (count($tipeRange) == 2) {
+                $query->whereBetween('tipe');
+            } else {
+                $query->where('tipe', $tipe);
+            }
+        }
+
+        if ($range_harga) {
+            [$min, $max] = explode('-', $range_harga);
+            $query->whereBetween('hargaproperti', [(int)$min, (int)$max]);
+        }
 
         $propertis = $query->paginate(12);
 
         return view('home.properti', compact('propertis'));
     }
-
 
     public function buy(Properti $properti)
     {

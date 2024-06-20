@@ -27,26 +27,33 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-body">
-                        <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
-                            <label class="btn btn-outline-success">
-                                <input type="radio" name="filter" id="jual" autocomplete="off" value="jual"> Jual
-                            </label>
-                            <label class="btn btn-outline-success">
-                                <input type="radio" name="filter" id="sewa" autocomplete="off" value="sewa"> Sewa
-                            </label>
-                            <label class="btn btn-outline-success">
-                                <input type="radio" name="filter" id="baru" autocomplete="off" value="baru">
-                                Property Baru
-                            </label>
-                        </div>
-                        <form action="{{ route('properti.search') }}" method="GET">
+                        <form id="searchForm" action="{{ route('properti.search') }}" method="GET">
+                            <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" value="" autocomplete="off">
+                                    Lihat Semua
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="perumahan" id="dijual" value="Triehans Village" autocomplete="off">
+                                    Triehans Village
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="perumahan" id="terjual" value="Griya Sakinah" autocomplete="off">
+                                    Griya Sakinah
+                                </label>
+                            </div>
                             <div class="form-row align-items-center">
                                 <div class="col-auto">
                                     <div class="input-group mb-2">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-home"></i></div>
+                                            <div class="input-group-text"><i class="fa fa-money"></i></div>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Tipe Rumah">
+                                        <select class="form-control" name="tipe">
+                                            <option value="" disabled selected>Tipe Rumah</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                            <option value="ruko">Ruko</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -54,7 +61,14 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fa fa-money"></i></div>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Range Harga">
+                                        <select class="form-control" name="range_harga">
+                                            <option value="" disabled selected>Range Harga</option>
+                                            <option value="0-100000000">0 - 100,000,000</option>
+                                            <option value="100000000-500000000">100,000,000 - 500,000,000</option>
+                                            <option value="500000000-1000000000">500,000,000 - 1,000,000,000</option>
+                                            <option value="1000000000-5000000000">1,000,000,000 - 5,000,000,000</option>
+                                            <option value="5000000000">5,000,000,000+</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -65,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-success mb-2">Cari</button>
+                                    <button type="submit" class="btn btn-info mb-2" onclick="submitForm()">Cari</button>
                                 </div>
                             </div>
                         </form>
@@ -74,9 +88,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <section class="ftco-section">
         @if (Session::has('alert'))
@@ -119,10 +130,9 @@
                                     </div>
                                     <div class="property-feature">
                                         <i class="fa fa-globe" aria-hidden="true"></i>
-                                        <span class="property-area">{{ $p->tipe }}m<sup>2</sup></span>
+                                        <span class="property-area">{{ $p->luas }}m<sup>2</sup></span>
                                     </div>
                                 </div>
-
                                 <div class="text text-center">
                                     <a href="{{ url('home/detail/' . $p->idproperti) }}">
                                         <button type="submit" class="btn btn-danger float-none">Buy Now</button>

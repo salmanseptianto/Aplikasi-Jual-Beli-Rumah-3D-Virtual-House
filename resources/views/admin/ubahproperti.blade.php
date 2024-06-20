@@ -23,7 +23,7 @@
         <div class="col-md-12 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Tambah Properti</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Rubah Properti</h6>
                 </div>
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data"
@@ -50,7 +50,29 @@
                         </div>
                         <div class="form-group">
                             <label>Tipe</label>
-                            <input type="text" class="form-control" name="tipe" value="{{ $properti->tipe }}">
+                            <select class="form-control" name="tipe">
+                                <option value="{{ $properti->tipe }}">{{ $properti->tipe }} (dipilih)</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                                <option value="ruko">Ruko</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Luas</label>
+                            <select class="form-control" name="luas">
+                                <option value="{{ $properti->luas }}">{{ $properti->luas }} (dipilih) </option>
+                                <option value="60">60 m²</option>
+                                <option value="96">96 m²</option>
+                                <option value="96">66 m²</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Perumahan</label>
+                            <select class="form-control" name="perumahan">
+                                <option value="{{ $properti->perumahan }}">{{ $properti->perumahan }} (dipilih)</option>
+                                <option value="0">Triehans Village</option>
+                                <option value="1">Griya Sakinah</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Fitur</label>
