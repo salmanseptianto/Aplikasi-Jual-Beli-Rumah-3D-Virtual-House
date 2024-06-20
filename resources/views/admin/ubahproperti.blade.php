@@ -70,8 +70,8 @@
                             <label>Perumahan</label>
                             <select class="form-control" name="perumahan">
                                 <option value="{{ $properti->perumahan }}">{{ $properti->perumahan }} (dipilih)</option>
-                                <option value="0">Triehans Village</option>
-                                <option value="1">Griya Sakinah</option>
+                                <option value="Triehans Village">Triehans Village</option>
+                                <option value="Griya Sakinah">Griya Sakinah</option>
                             </select>
                         </div>
                         <div class="form-group">
