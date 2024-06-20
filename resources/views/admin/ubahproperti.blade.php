@@ -129,7 +129,6 @@
                         </div>
                         <button class="btn btn-danger" name="save"><i
                                 class="glyphicon glyphicon-saved"></i>Simpan</a></button>
-
                     </form>
                 </div>
             </div>
