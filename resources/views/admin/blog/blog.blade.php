@@ -1,8 +1,8 @@
-@extends('agent.templates.index')
+@extends('admin.templates.index')
 
 @section('page-content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <a href="{{ url('agent/tambahblog') }}" class="btn btn-sm btn-primary shadow-sm float-right pull-right"><i
+        <a href="{{ url('admin/tambahblog') }}" class="btn btn-sm btn-primary shadow-sm float-right pull-right"><i
                 class="fas fa-plus fa-sm text-white-50"></i> Tambah Blog</a>
     </div>
     <div class="row">
@@ -31,14 +31,14 @@
                                     <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis;">
                                         {{ Str::limit($b->deskripsi, 25) }}
                                     </td>
-                                    
+
                                     <td>
                                         <img src="{{ asset('foto/' . $b->foto) }}" width="100px">
                                     </td>
                                     <td>
-                                        <a href="{{ url('agent/ubahblog/' . $b->idblog) }}" class="btn btn-warning">Ubah</a>
-                                        <a href="{{ url('agent/hapusblog/' . $b->idblog) }}" class="btn btn-danger"
-                                            onclick="confirmDeletion(event, '{{ url('agent/hapusblog/' . $b->idblog) }}')">Hapus</a>
+                                        <a href="{{ url('admin/ubahblog/' . $b->idblog) }}" class="btn btn-warning">Ubah</a>
+                                        <a href="{{ url('admin/hapusblog/' . $b->idblog) }}" class="btn btn-danger"
+                                            onclick="confirmDeletion(event, '{{ url('admin/hapusblog/' . $b->idblog) }}')">Hapus</a>
                                     </td>
                                 </tr>
                                 <?php $nomor++; ?>

@@ -54,7 +54,7 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-no-pb mb-5">
+    <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center">
@@ -75,7 +75,7 @@
         </div>
     </section>
     <section class="ftco-section">
-        <h1 class="mb-0 text-center mb-5">Properti</h1>
+        {{-- <h1 class="mb-0 text-center mb-5">Properti</h1>
         <div class="container">
             <div class="row">
                 @foreach ($properti as $p)
@@ -100,9 +100,107 @@
                     @endif
                 @endforeach
             </div>
-            <div class="text-center">
+            <div class="text-center mb-5">
                 <p><a href="{{ url('home/properti') }}" class="btn btn-danger py-2 px-4">Lihat Seluruh Properti</a></p>
+            </div> --}}
+        <div class="container">
+            <h1 class="mb-0 text-center mb-5">HARGA & FASILITAS</h1>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Rumah Tipe 45/96</h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>349 Jt<span>(Komersil)</span></h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 1 Kamar Mandi</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Ruang Tamu</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Dapur</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Carport</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Bangunan 45 m<sup>2</sup>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 96 m<sup>2</sup>
+                                    (6x14m)</li>
+                            </ul>
+                            <a href="#team" class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Rumah Subsidi Tipe 30/60</h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>900 Rb <span>(perbulan)</span></h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 1 Kamar Mandi</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Ruang Tamu</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Dapur</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Carport</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Bangunan 30 m<sup>2</sup>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 60 m<sup>2</sup>
+                                    (6x10m)</li>
+                            </ul>
+                            <a href="#team" class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Rumah Tipe 45/84</h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>425 Jt<span>(Komersil)</span></h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 1 Kamar Mandi</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Ruang Tamu</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Dapur</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Carport</li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Bangunan 45
+                                    m<sup>2</sup></li>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 98 m<sup>2</sup>
+                                    (7x14m)</li>
+                            </ul>
+                            <a href="#team" class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+    <section id="facts">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+
+            <div class="row counters">
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="0"
+                        class="purecounter">64</span>
+                    <p>Total Unit</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="49" data-purecounter-duration="0"
+                        class="purecounter">49</span>
+                    <p>subsidi</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="0"
+                        class="purecounter">15</span>
+                    <p>Komersil</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="0"
+                        class="purecounter">48</span>
+                    <p>Terjual</p>
+                </div>
+
+            </div>
+
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
