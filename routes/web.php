@@ -53,7 +53,8 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('admin/hapuspengguna/{id}', 'hapuspengguna');
 
     Route::get('admin/pengguna', 'pengguna');
-    Route::get('admin/tambahpengguna', 'tambahpengguna');
+    Route::get('admin/user', 'user');
+    Route::get('admin/tambahagent', 'tambahpengguna');
     Route::post('admin/simpanpengguna', 'simpanpengguna');
     Route::get('admin/ubahpengguna/{id}', 'ubahpengguna');
     Route::post('admin/updatepengguna/{id}', 'updatepengguna');

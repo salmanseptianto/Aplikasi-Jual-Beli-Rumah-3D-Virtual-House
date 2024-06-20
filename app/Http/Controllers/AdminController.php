@@ -12,7 +12,45 @@ class AdminController extends Controller
     {
         return view('admin.dashboard');
     }
+    public function simpanpengguna(Request $request)
+    {
+        $requiredFields = ['nama', 'email', 'alamat', 'telepon', 'foto', 'password'];
+        foreach ($requiredFields as $field) {
+            if (empty($request->$field)) {
+                return redirect()->back()->with('alert', 'Mohon isi data terlebih dahulu');
+            }
+        }
 
+        $namafoto = $request->file('foto')->getClientOriginalName();
+        $request->file('foto')->move(public_path('foto'), $namafoto);
+
+        $kelamin = $request->input('kelamin');
+
+        if (strlen($request->password) < 6) {
+            return redirect()->back()->with('alert', 'Password harus terdiri dari minimal 6 karakter');
+        }
+
+        $data = [
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'alamat' => $request->alamat,
+            'telepon' => $request->telepon,
+            'fotoprofil' => $namafoto,
+            'password' => $request->password,
+            'level' => 'Agent',
+            'kelamin' => 'null',
+        ];
+
+        $existingUser = DB::table('pengguna')->where('email', $request->email)->count();
+
+        if ($existingUser == 1) {
+            return redirect()->back()->with('alert', 'Pendaftaran Gagal, email sudah ada');
+        } else {
+            DB::table('pengguna')->insert($data);
+
+            return redirect('admin/pengguna')->with('alert', 'Pendaftaran Berhasil');
+        }
+    }
     public function akun()
     {
         if (session()->has('admin')) {
@@ -81,6 +119,10 @@ class AdminController extends Controller
 
         session()->flash('success', 'Data pengguna berhasil diperbarui.');
         return redirect('admin/akun');
+    }
+    public function tambahpengguna()
+    {
+        return view('admin.tambahagent');
     }
 
     public function properti()
@@ -212,13 +254,32 @@ class AdminController extends Controller
 
     public function pengguna()
     {
-        $pengguna = DB::table('pengguna')->where('level', 'Pelanggan')->get();
+        $pengguna = DB::table('pengguna')
+            ->where(function ($query) {
+                $query->where('level', 'Agent');
+                    // ->orWhere('level', 'Agent'); 
+            })
+            ->get();
 
         $data = [
             'pengguna' => $pengguna,
         ];
 
         return view('admin.pengguna', $data);
+    }
+    public function user()
+    {
+        $pengguna = DB::table('pengguna')
+            ->where(function ($query) {
+                $query->where('level', 'pelanggan');
+            })
+            ->get();
+
+        $data = [
+            'pengguna' => $pengguna,
+        ];
+
+        return view('admin.user', $data);
     }
 
     public function hapuspengguna($id)

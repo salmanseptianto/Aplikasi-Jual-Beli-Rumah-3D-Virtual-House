@@ -1,10 +1,7 @@
 @extends('admin.templates.index')
 
 @section('page-content')
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <a href="{{ url('admin/tambahagent') }}" class="btn btn-sm btn-primary shadow-sm float-right pull-right"><i
-                class="fas fa-plus fa-sm text-white-50"></i> Tambah Agent</a>
-    </div>
+   
     <div class="row">
         <div class="col-md-12 mb-4">
             <div class="card shadow mb-4">
@@ -21,7 +18,7 @@
                                 <th>Telepon</th>
                                 <th>Alamat</th>
                                 {{-- <th>Level</th> --}}
-                                <th>Aksi</th>
+                                {{-- <th>Aksi</th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -43,10 +40,10 @@
                                     </td>
                                     <td>{{ $pecah->alamat }}</td>
                                     {{-- <td>{{ $pecah->level }}</td> --}}
-                                    <td>
+                                    {{-- <td>
                                         <a href="{{ url('admin/hapuspengguna/' . $pecah->id) }}" class="btn btn-danger"
                                             onclick="return confirm('Hapus Data?')">Hapus</a>
-                                    </td>
+                                    </td> --}}
                                 </tr>
                             @endforeach
                         </tbody>

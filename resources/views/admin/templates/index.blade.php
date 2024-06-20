@@ -58,13 +58,6 @@
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ url('admin/blog') }}">
-                    <i class="fas fa fa-square text-white"></i>
-                    <span>Blog</span>
-                </a>
-            </li>
-            <hr class="sidebar-divider">
-            <li class="nav-item">
                 <a class="nav-link text-white" href="{{ url('admin/pembelian') }}">
                     <i class="fas fa-fw fa-home text-white"></i>
                     <span>Transaksi</span></a>
@@ -72,6 +65,12 @@
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ url('admin/pengguna') }}">
+                    <i class="fas fa-fw fa-users text-white"></i>
+                    <span>Data Agent</span></a>
+            </li>
+            <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ url('admin/user') }}">
                     <i class="fas fa-fw fa-users text-white"></i>
                     <span>Data User</span></a>
             </li>
