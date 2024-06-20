@@ -1,4 +1,4 @@
-@extends('admin.templates.index')
+@extends('agent.templates.index')
 
 @section('page-content')
     @if ($errors->any())
@@ -31,7 +31,7 @@
     @endif
 
     <section id="home-section" class="hero">
-        <form method="post" enctype="multipart/form-data" action="{{ url('admin/ubahakun/' . $pengguna->id) }}">
+        <form method="post" enctype="multipart/form-data" action="{{ url('agent/ubahakun/' . $pengguna->id) }}">
             @csrf
             <div class="container mt-4">
                 <div class="row">

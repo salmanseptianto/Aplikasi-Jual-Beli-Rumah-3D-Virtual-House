@@ -1,4 +1,4 @@
-@if (!session('admin'))
+@if (!session('agent'))
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
@@ -21,7 +21,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Properti Virtual - Admin</title>
+    <title>Properti Virtual - Agent</title>
     <link href="{{ asset('assets/admin/css/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -41,37 +41,37 @@
     <div id="wrapper">
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #764ca3;">
             <a class="sidebar-brand d-flex align-items-center justify-content-center text-white"
-                href="{{ url('admin') }}">
+                href="{{ url('agent') }}">
                 <div class="sidebar-brand-text mx-3">Properti Virtual</sup></div>
             </a>
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ url('admin') }}">
+                <a class="nav-link text-white" href="{{ url('agent') }}">
                     <i class="fas fa-fw fa-book text-white"></i>
                     <span>Dashboard</span></a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ url('admin/properti') }}">
+                <a class="nav-link text-white" href="{{ url('agent/properti') }}">
                     <i class="fas fa-fw fa-pen text-white"></i>
                     <span>Properti</span></a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ url('admin/blog') }}">
+                <a class="nav-link text-white" href="{{ url('agent/blog') }}">
                     <i class="fas fa fa-square text-white"></i>
                     <span>Blog</span>
                 </a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ url('admin/pembelian') }}">
+                <a class="nav-link text-white" href="{{ url('agent/pembelian') }}">
                     <i class="fas fa-fw fa-home text-white"></i>
                     <span>Transaksi</span></a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ url('admin/pengguna') }}">
+                <a class="nav-link text-white" href="{{ url('agent/pengguna') }}">
                     <i class="fas fa-fw fa-users text-white"></i>
                     <span>Data User</span></a>
             </li>
@@ -88,10 +88,10 @@
                             <a class="nav-link dropdown-toggle font-weight-bold text-black-50" href="#"
                                 id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="false"
                                 aria-expanded="true">
-                                Admin
+                                Agent
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ url('admin/akun') }}">Profil</a>
+                                <a class="dropdown-item" href="{{ url('agent/akun') }}">Profil</a>
                                 <a class="dropdown-item" href="#" onclick="confirmLogout()">Logout</a>
                             </div>
                         </li>

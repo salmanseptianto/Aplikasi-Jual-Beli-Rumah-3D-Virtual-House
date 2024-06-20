@@ -1,9 +1,9 @@
-@extends('admin.templates.index')
+@extends('agent.templates.index')
 
 @section('page-content')
     
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <a href="{{ url('admin/tambahproperti') }}" class="btn btn-sm btn-primary shadow-sm float-right pull-right"><i
+        <a href="{{ url('agent/tambahproperti') }}" class="btn btn-sm btn-primary shadow-sm float-right pull-right"><i
                 class="fas fa-plus fa-sm text-white-50"></i> Tambah Properti</a>
     </div>
     <div class="row">
@@ -34,10 +34,10 @@
                                         <img src="{{ asset('foto/' . $p->fotoproperti) }}" width="100px">
                                     </td>
                                     <td>
-                                        <a href="{{ url('admin/ubahproperti/' . $p->idproperti) }}"
+                                        <a href="{{ url('agent/ubahproperti/' . $p->idproperti) }}"
                                             class="btn btn-warning">Ubah</a>
-                                        <a href="{{ url('admin/hapusproperti/' . $p->idproperti) }}" class="btn btn-danger"
-                                            onclick="confirmDeletion(event, '{{ url('admin/hapusproperti/' . $p->idproperti) }}')">Hapus</a>
+                                        <a href="{{ url('agent/hapusproperti/' . $p->idproperti) }}" class="btn btn-danger"
+                                            onclick="confirmDeletion(event, '{{ url('agent/hapusproperti/' . $p->idproperti) }}')">Hapus</a>
                                     </td>
                                 </tr>
                                 <?php $nomor++; ?>

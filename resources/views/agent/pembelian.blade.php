@@ -1,4 +1,4 @@
-@extends('admin.templates.index')
+@extends('agent.templates.index')
 
 @section('page-content')
     @if (session('error'))
@@ -51,7 +51,7 @@
                                     <td>Rp. {{ number_format($p->totalbeli) }}</td>
                                     <td>{{ $p->statusbeli }}</td>
                                     <td>
-                                        <a href="{{ url('admin/pembayaran/' . $p->idpembelian) }}"
+                                        <a href="{{ url('agent/pembayaran/' . $p->idpembelian) }}"
                                             class="btn btn-info">Detail</a>
                                     </td>
                                 </tr>

@@ -10,29 +10,29 @@ class AgentController extends Controller
 
     public function index()
     {
-        return view('admin.dashboard');
+        return view('agent.dashboard');
     }
 
     public function akun()
     {
-        if (session()->has('admin')) {
-            $admin = session('admin');
-            if (property_exists($admin, 'id')) {
-                $idpengguna = $admin->id;
+        if (session()->has('agent')) {
+            $agent = session('agent');
+            if (property_exists($agent, 'id')) {
+                $idpengguna = $agent->id;
             } else {
                 echo "Maaf ID Anda Tidak Ditemukan.";
             }
         } else {
-            echo "Sesi 'admin' tidak tersedia.";
+            echo "Sesi 'agent' tidak tersedia.";
         }
 
-        $idpengguna = session('admin')->id;
+        $idpengguna = session('agent')->id;
         $pengguna = DB::table('pengguna')->where('id', $idpengguna)->first();
 
         $data = [
             'pengguna' => $pengguna,
         ];
-        return view('admin.akun', $data);
+        return view('agent.akun', $data);
     }
 
     public function ubahakun(Request $request, $id)
@@ -80,19 +80,151 @@ class AgentController extends Controller
             ]);
 
         session()->flash('success', 'Data pengguna berhasil diperbarui.');
-        return redirect('admin/akun');
+        return redirect('agent/akun');
+    }
+    public function Blog()
+    {
+        $blogs = DB::table('blog')->get();
+        $data['blogs'] = $blogs;
+        return view('agent.blog.blog', $data);
     }
 
+    public function tambahblog()
+    {
+        return view('agent.blog.tambahblog');
+    }
+
+    public function simpanblog(Request $request)
+    {
+        $days = [
+            'Sunday' => 'Minggu',
+            'Monday' => 'Senin',
+            'Tuesday' => 'Selasa',
+            'Wednesday' => 'Rabu',
+            'Thursday' => 'Kamis',
+            'Friday' => 'Jumat',
+            'Saturday' => 'Sabtu'
+        ];
+
+        $months = [
+            'January' => 'Januari',
+            'February' => 'Februari',
+            'March' => 'Maret',
+            'April' => 'April',
+            'May' => 'Mei',
+            'June' => 'Juni',
+            'July' => 'Juli',
+            'August' => 'Agustus',
+            'September' => 'September',
+            'October' => 'Oktober',
+            'November' => 'November',
+            'December' => 'Desember'
+        ];
+
+
+        $dayName = $days[date('l')];
+        $day = date('d');
+        $month = $months[date('F')];
+        $year = date('Y');
+
+        $tanggal = "$dayName, $day $month $year";
+
+        $validatedData = $request->validate([
+            'judul' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'required' => 'Table :attribute Belum Diisi.',
+            'numeric' => 'Table :attribute Harus Berupa Angka.',
+            'integer' => 'Table :attribute Harus Berupa Angka.',
+            'url' => 'Table :attribute Harus Berupa URL Yang Valid.',
+            'image' => 'Table :attribute Harus Berupa Gambar.',
+            'mimes' => 'Table :attribute Harus Berupa File Dengan Format: jpeg, png, jpg, gif.',
+            'max' => 'Table :attribute Maksimal Yang Diperbolehkan Adalah :max KB Atau 2 MB.',
+        ]);
+
+        if ($request->hasFile('foto')) {
+            $namafoto = $request->file('foto')->getClientOriginalName();
+            $request->file('foto')->move(public_path('foto'), $namafoto);
+        } else {
+            return redirect()->back()->withInput()->withErrors(['foto' => 'Foto tidak ditemukan']);
+        }
+
+        DB::table('blog')->insert([
+            'judul' => $request->input('judul'),
+            'deskripsi' => $request->input('deskripsi'),
+            'foto' => $namafoto,
+            'tanggal' => $tanggal,
+
+        ]);
+
+        session()->flash('alert', 'blog berhasil ditambahkan. 😊');
+
+
+        return redirect('agent/blog');
+    }
+
+    public function ubahblog($id)
+    {
+        $data['blog'] = DB::table('blog')->where('idblog', $id)->first();
+
+        return view('agent.blog.ubahblog', $data);
+    }
+
+    public function updateblog(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'judul' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'required' => 'Table :attribute Belum Diisi.',
+            'numeric' => 'Table :attribute Harus Berupa Angka.',
+            'integer' => 'Table :attribute Harus Berupa Angka.',
+            'url' => 'Table :attribute Harus Berupa URL Yang Valid.',
+            'image' => 'Table :attribute Harus Berupa Gambar.',
+            'mimes' => 'Table :attribute Harus Berupa File Dengan Format: jpeg, png, jpg, gif.',
+            'max' => 'Table :attribute Maksimal Yang Diperbolehkan Adalah :max KB Atau 2 MB.',
+        ]);
+
+
+        $blog = DB::table('blog')->where('idblog', $id)->first();
+
+        $data = [
+            'judul' => $request->input('judul'),
+            'deskripsi' => $request->input('deskripsi'),
+
+        ];
+
+        if ($request->hasFile('foto')) {
+            $namafoto = $request->file('foto')->getClientOriginalName();
+            $request->file('foto')->move(public_path('foto'), $namafoto);
+            $data['foto'] = $namafoto;
+        }
+
+        DB::table('blog')->where('idblog', $id)->update($data);
+
+        session()->flash('alert', 'Blog berhasil dirubah! 😊');
+
+        return redirect('agent/blog');
+    }
+
+    public function hapusblog($id)
+    {
+        DB::table('blog')->where('idblog', $id)->delete();
+        session()->flash('alert', 'Berhasil menghapus data!');
+        return redirect('agent/blog');
+    }
     public function properti()
     {
         $properti = DB::table('properti')->get();
         $data['properti'] = $properti;
-        return view('admin.properti', $data);
+        return view('agent.properti', $data);
     }
 
     public function tambahproperti()
     {
-        return view('admin.tambahproperti');
+        return view('agent.tambahproperti');
     }
 
     public function simpanproperti(Request $request)
@@ -142,14 +274,14 @@ class AgentController extends Controller
 
         session()->flash('alert', 'Properti berhasil ditambahkan. 😊');
 
-        return redirect('admin/properti');
+        return redirect('agent/properti');
     }
 
     public function ubahproperti($id)
     {
         $data['properti'] = DB::table('properti')->where('idproperti', $id)->first();
 
-        return view('admin.ubahproperti', $data);
+        return view('agent.ubahproperti', $data);
     }
 
     public function updateproperti(Request $request, $id)
@@ -200,14 +332,14 @@ class AgentController extends Controller
 
         DB::table('properti')->where('idproperti', $id)->update($data);
         session()->flash('alert', 'Properti berhasil dirubah! 😊');
-        return redirect('admin/properti');
+        return redirect('agent/properti');
     }
 
     public function hapusproperti($id)
     {
         DB::table('properti')->where('idproperti', $id)->delete();
         session()->flash('alert', 'Berhasil menghapus data!');
-        return redirect('admin/properti');
+        return redirect('agent/properti');
     }
 
     public function pengguna()
@@ -218,7 +350,7 @@ class AgentController extends Controller
             'pengguna' => $pengguna,
         ];
 
-        return view('admin.pengguna', $data);
+        return view('agent.pengguna', $data);
     }
 
     public function hapuspengguna($id)
@@ -252,7 +384,7 @@ class AgentController extends Controller
             'pembelian' => $pembelian,
             'dataproperti' => $dataproperti,
         ];
-        return view('admin.pembelian', $data);
+        return view('agent.pembelian', $data);
     }
 
     public function pembayaran($id)
@@ -274,7 +406,7 @@ class AgentController extends Controller
 
         $pengguna = DB::table('pengguna')->get();
 
-        $idpengguna = session('admin')->id;
+        $idpengguna = session('agent')->id;
         $pengguna = DB::table('pengguna')->where('id', $idpengguna)->first();
 
         if (!$pembayaran) {
@@ -288,7 +420,7 @@ class AgentController extends Controller
             'pengguna' => $pengguna,
         ];
 
-        return view('admin.pembayaran', $data);
+        return view('agent.pembayaran', $data);
     }
 
     public function simpanpembayaran($id, Request $request)
@@ -321,7 +453,7 @@ class AgentController extends Controller
                     ]);
             }
 
-            return redirect('admin/pembelian');
+            return redirect('agent/pembelian');
         }
     }
 }

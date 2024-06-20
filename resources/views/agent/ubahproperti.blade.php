@@ -1,4 +1,4 @@
-@extends('admin.templates.index')
+@extends('agent.templates.index')
 
 @section('page-content')
     @if ($errors->any())
@@ -27,7 +27,7 @@
                 </div>
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data"
-                        action="{{ url('admin/updateproperti/' . $properti->idproperti) }}">
+                        action="{{ url('agent/updateproperti/' . $properti->idproperti) }}">
                         @csrf
                         <div class="form-group">
                             <label>Nama</label>

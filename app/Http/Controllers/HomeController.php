@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Properti;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 
 class HomeController extends Controller
@@ -130,26 +131,38 @@ class HomeController extends Controller
     {
         $email = $request->input('email');
         $password = $request->input('password');
+
+        // Debug log untuk email dan password
+        Log::info('Email: ' . $email);
+        Log::info('Password: ' . $password);
+
         $akun = DB::table('pengguna')
-            ->where('email', $email)
-            ->where('password', $password)
+        ->where('email', $email)
+            ->where('password', $password) // Pastikan password tidak dienkripsi
             ->first();
 
         if ($akun) {
+            Log::info('Akun ditemukan: ' . json_encode($akun));
+
             if ($akun->level == "Pelanggan") {
                 session(['pengguna' => $akun]);
                 return redirect('home')->with('alert', 'Selamat Anda Berhasil Login');
             } elseif ($akun->level == "Admin") {
                 session(['admin' => $akun]);
                 return redirect('admin')->with('alert', 'Selamat Anda Berhasil Login');
-            } elseif ($akun->level == "sadmin") {
-                session(['sadmin' => $akun]);
-                return redirect('sadmin')->with('alert', 'Selamat Anda Berhasil Login');
+            } elseif (strtolower($akun->level) == "agent") { // Menggunakan strtolower untuk case-insensitive
+                session(['agent' => $akun]);
+                return redirect('agent')->with('alert', 'Selamat Anda Berhasil Login');
+            } else {
+                Log::info('Level pengguna tidak dikenali: ' . $akun->level);
             }
         } else {
-            return redirect()->back()->with('alert', 'Email atau Password anda salah');
+            Log::warning('Akun tidak ditemukan atau email/password salah');
         }
+
+        return redirect()->back()->with('alert', 'Email atau Password anda salah');
     }
+
 
     public function logout()
 

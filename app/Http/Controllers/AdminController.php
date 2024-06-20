@@ -10,7 +10,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('sadmin.dashboard');
+        return view('admin.dashboard');
     }
 
     public function akun()

@@ -1,4 +1,4 @@
-@extends('admin.templates.index')
+@extends('agent.templates.index')
 
 @section('page-content')
     <div class="row">
@@ -120,7 +120,7 @@
                                     </tr>
                                 </table>
                                 <form method="post"
-                                    action="{{ url('admin/simpanpembayaran/' . $datapembelian->idpembelian) }}">
+                                    action="{{ url('agent/simpanpembayaran/' . $datapembelian->idpembelian) }}">
                                     @csrf
                                     <div class="form-group">
                                         <label>Status</label>

@@ -1,4 +1,4 @@
-@extends('admin.templates.index')
+@extends('agent.templates.index')
 
 @section('page-content')
     <div class="row">
@@ -37,7 +37,7 @@
                                     </td>
                                     <td>{{ $pecah->alamat }}</td>
                                     {{-- <td>
-                                        <a href="{{ url('admin/hapuspengguna/' . $pecah->id) }}" class="btn btn-danger"
+                                        <a href="{{ url('agent/hapuspengguna/' . $pecah->id) }}" class="btn btn-danger"
                                             onclick="return confirm('Hapus Data?')">Hapus</a>
                                     </td> --}}
                                 </tr>

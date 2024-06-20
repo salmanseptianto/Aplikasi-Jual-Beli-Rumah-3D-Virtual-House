@@ -1,4 +1,4 @@
-@extends('admin.templates.index')
+@extends('agent.templates.index')
 
 @section('page-content')
     @if ($errors->any())
@@ -28,7 +28,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Tambah Properti</h6>
                 </div>
                 <div class="card-body">
-                    <form method="post" enctype="multipart/form-data" action="{{ url('admin/simpanproperti') }}">
+                    <form method="post" enctype="multipart/form-data" action="{{ url('agent/simpanproperti') }}">
                         @csrf
                         <div class="form-group">
                             <label>Nama</label>
