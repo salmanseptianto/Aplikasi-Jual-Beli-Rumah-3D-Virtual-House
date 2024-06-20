@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\Home;
-use App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\SearchController;
+use App\Http\Controllers\AgentController;
 use App\Http\Controllers\PasswordController;
 
 /*
@@ -36,6 +34,37 @@ Route::controller(BlogController::class)->group(function () {
 
     Route::get('home/blog', 'blogs');
     Route::get('home/isiblog/{id}', 'isiblog');
+});
+
+Route::controller(AgentController::class)->group(function () {
+
+    Route::get('agent', 'index');
+
+    Route::get('agent/akun', 'akun');
+    Route::post('agent/ubahakun/{id}', 'ubahakun');
+
+    Route::get('agent/properti', 'properti');
+    Route::get('agent/tambahproperti', 'tambahproperti');
+    Route::post('agent/simpanproperti', 'simpanproperti');
+    Route::get('agent/ubahproperti/{id}', 'ubahproperti');
+    Route::post('agent/updateproperti/{id}', 'updateproperti');
+    Route::get('agent/hapusproperti/{id}', 'hapusproperti');
+
+    Route::get('agent/hapuspengguna/{id}', 'hapuspengguna');
+
+    Route::get('agent/pengguna', 'pengguna');
+    Route::get('agent/tambahpengguna', 'tambahpengguna');
+    Route::post('agent/simpanpengguna', 'simpanpengguna');
+    Route::get('agent/ubahpengguna/{id}', 'ubahpengguna');
+    Route::post('agent/updatepengguna/{id}', 'updatepengguna');
+    Route::get('agent/hapuspengguna/{id}', 'hapuspengguna');
+
+    Route::get('agent/logout', 'logout');
+
+    Route::get('agent/pembelian', 'pembelian');
+    Route::get('agent/pembayaran/{id}', 'pembayaran');
+    Route::post('agent/simpanpembayaran/{id}', 'simpanpembayaran');
+    Route::post('agent/selesai', 'selesai');
 });
 
 Route::controller(AdminController::class)->group(function () {

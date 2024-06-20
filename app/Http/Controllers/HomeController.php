@@ -17,7 +17,7 @@ class HomeController extends Controller
         $tipe = $request->input('tipe');
         $range_harga = $request->input('range_harga');
 
-        $query = Properti::where('perumahan', $perumahan !== null ? $perumahan : 0 );
+        $query = Properti::where('perumahan', $perumahan !== null ? $perumahan : 0);
 
         if ($search) {
             $query->where(function ($q) use ($search) {
@@ -25,7 +25,7 @@ class HomeController extends Controller
                     ->orWhere('deskripsiproperti', 'LIKE', "%$search%");
             });
         }
-       
+
         if ($tipe) {
             $tipeRange = explode('-', $tipe);
             if (count($tipeRange) == 2) {
@@ -142,6 +142,9 @@ class HomeController extends Controller
             } elseif ($akun->level == "Admin") {
                 session(['admin' => $akun]);
                 return redirect('admin')->with('alert', 'Selamat Anda Berhasil Login');
+            } elseif ($akun->level == "sadmin") {
+                session(['sadmin' => $akun]);
+                return redirect('sadmin')->with('alert', 'Selamat Anda Berhasil Login');
             }
         } else {
             return redirect()->back()->with('alert', 'Email atau Password anda salah');
