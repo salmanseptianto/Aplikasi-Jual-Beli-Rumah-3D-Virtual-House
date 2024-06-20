@@ -54,7 +54,7 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-no-pb">
+    <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center">
@@ -74,7 +74,7 @@
             </div>
         </div>
     </section>
-    <section class="ftco-section">
+    <section class="mb-5">
         {{-- <h1 class="mb-0 text-center mb-5">Properti</h1>
         <div class="container">
             <div class="row">
@@ -106,7 +106,7 @@
         <div class="container">
             <h1 class="mb-0 text-center mb-5">HARGA & FASILITAS</h1>
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Rumah Tipe 45/96</h5>
@@ -126,8 +126,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 ">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Rumah Subsidi Tipe 30/60</h5>
@@ -147,7 +146,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 ">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Rumah Tipe 45/84</h5>
@@ -170,39 +169,49 @@
             </div>
         </div>
     </section>
-    <section id="facts">
+    <section class="py-4" id="facts">
         <div class="container aos-init aos-animate" data-aos="fade-up">
-
-            <div class="row counters">
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="0"
-                        class="purecounter">64</span>
-                    <p>Total Unit</p>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="counter-card text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1"
+                            class="purecounter">64</span>
+                        <p>Total Unit</p>
+                    </div>
                 </div>
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="49" data-purecounter-duration="0"
-                        class="purecounter">49</span>
-                    <p>subsidi</p>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="counter-card text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="49" data-purecounter-duration="1"
+                            class="purecounter">49</span>
+                        <p>Subsidi</p>
+                    </div>
                 </div>
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="0"
-                        class="purecounter">15</span>
-                    <p>Komersil</p>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="counter-card text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                            class="purecounter">15</span>
+                        <p>Komersil</p>
+                    </div>
                 </div>
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="0"
-                        class="purecounter">48</span>
-                    <p>Terjual</p>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="counter-card text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1"
+                            class="purecounter">48</span>
+                        <p>Terjual</p>
+                    </div>
                 </div>
-
             </div>
-
         </div>
+        <script>
+            new PureCounter();
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
     </section>
+
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

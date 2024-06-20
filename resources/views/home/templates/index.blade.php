@@ -161,6 +161,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&sensor=false"></script>
     <script src="{{ asset('assets/home/js/google-map.js') }}"></script>
     <script src="{{ asset('assets/home/js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.1.4/dist/purecounter_vanilla.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
