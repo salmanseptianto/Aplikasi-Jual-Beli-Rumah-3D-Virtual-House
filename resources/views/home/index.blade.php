@@ -62,7 +62,6 @@
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
                     <div class="heading-section">
-
                         <h3 class="mt-4">Tentang kami</h3>
                         <p>
                             Properti Virtual adalah blogs properti yang berfokus pada penjualan berbagai jenis properti di
@@ -74,42 +73,15 @@
             </div>
         </div>
     </section>
-    <section class="mb-5">
-        {{-- <h1 class="mb-0 text-center mb-5">Properti</h1>
-        <div class="container">
-            <div class="row">
-                @foreach ($properti as $p)
-                    @if (!$p->checkout_status)
-                        <div class="col-md-4 d-flex">
-                            <div class="product ftco-animate">
-                                <div class="img d-fbex align-items-center justify-content-center">
-                                    <a href="{{ url('home/detail/' . $p->idproperti) }}">
-                                        <div class="img d-flex align-items-center justify-content-center"
-                                            style="background-image: url('{{ asset('foto/' . $p->fotoproperti) }}');">
-                                        </div>
-                                    </a>
 
-                                </div>
-                                <div class="text text-center">
-                                    <h2>{{ $p->namaproperti }}</h2>
-                                    <p class="mb-0"><span class="price price-sale"></span> <span class="price">Rp
-                                            {{ number_format($p->hargaproperti) }}</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
-            </div>
-            <div class="text-center mb-5">
-                <p><a href="{{ url('home/properti') }}" class="btn btn-danger py-2 px-4">Lihat Seluruh Properti</a></p>
-            </div> --}}
+    <section class="mb-5">
         <div class="container">
             <h1 class="mb-0 text-center mb-5">HARGA & FASILITAS</h1>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Rumah Tipe 45/96</h5>
+                            <h5 class="card-title">Rumah Tipe 54/98</h5>
                             <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>349 Jt<span>(Komersil)</span></h6>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
@@ -169,7 +141,8 @@
             </div>
         </div>
     </section>
-    <section class="py-4" id="facts">
+
+    <section class="py-4">
         <div class="container aos-init aos-animate" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -202,22 +175,30 @@
                 </div>
             </div>
         </div>
-        <script>
-            new PureCounter();
-        </script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
     </section>
-
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-        integrity="sha384-YU+2bMdsRXP9A9rIEU5zLDTb4gZZk6UtCCFi9aTE8UDnvPbJ8C/6RlupMvJNQ6KR" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyO8U6lZIeRqGgjz8I4N5aVRrM14DlTq" crossorigin="anonymous"></script>
+    <section>
+        <div class="container" data-aos="fade-up">
+            <div class="section-title text-center">
+                <h2>Pilihan Tipe Rumah</h2>
+                <p>Kamu bisa memilih tipe rumah sesuai keinginan dan kebutuhanmu</p>
+            </div>
+            <div class="row justify-content-center" data-aos="fade-right" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('foto/denah30.png') }}" class="card-img-top img-fluid" alt="denah30">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('foto/denah45.png') }}" class="card-img-top img-fluid" alt="denah45">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('foto/denah54.png') }}" class="card-img-top img-fluid" alt="denah54">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

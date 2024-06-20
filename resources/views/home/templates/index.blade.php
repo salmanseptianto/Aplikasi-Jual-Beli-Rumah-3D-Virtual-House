@@ -166,6 +166,21 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-YU+2bMdsRXP9A9rIEU5zLDTb4gZZk6UtCCFi9aTE8UDnvPbJ8C/6RlupMvJNQ6KR" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyO8U6lZIeRqGgjz8I4N5aVRrM14DlTq" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.0.4/dist/purecounter_vanilla.js"></script>
+    <script>
+        new PureCounter();
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('assets/home/js/script.js') }}"></script>
     <script>

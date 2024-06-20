@@ -51,7 +51,7 @@
                                     <option value="" disabled selected>Tipe Rumah</option>
                                     <option value="30">30</option>
                                     <option value="45">45</option>
-                                    <option value="ruko">Ruko</option>
+                                    <option value="54">54</option>
                                 </select>
                             </div>
                         </div>

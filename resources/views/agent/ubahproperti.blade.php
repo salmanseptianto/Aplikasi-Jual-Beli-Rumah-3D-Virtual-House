@@ -54,7 +54,7 @@
                                 <option value="{{ $properti->tipe }}">{{ $properti->tipe }} (dipilih)</option>
                                 <option value="30">30</option>
                                 <option value="45">45</option>
-                                <option value="ruko">Ruko</option>
+                                <option value="54">54</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -62,8 +62,8 @@
                             <select class="form-control" name="luas">
                                 <option value="{{ $properti->luas }}">{{ $properti->luas }} (dipilih) </option>
                                 <option value="60">60 m²</option>
-                                <option value="96">96 m²</option>
-                                <option value="96">66 m²</option>
+                                <option value="84">84 m²</option>
+                                <option value="98">98 m²</option>
                             </select>
                         </div>
                         <div class="form-group">
