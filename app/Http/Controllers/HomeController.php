@@ -108,7 +108,6 @@ class HomeController extends Controller
             'fotoprofil' => $namafoto,
             'password' => $request->password,
             'level' => 'Pelanggan',
-            'kelamin' => 'null',
         ];
 
         $existingUser = DB::table('pengguna')->where('email', $request->email)->count();
