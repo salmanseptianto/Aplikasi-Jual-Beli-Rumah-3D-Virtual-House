@@ -15,7 +15,7 @@
             </div>
         </div>
     </section>
-    <section class="ftco-section">
+    <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-5 ftco-animate">
@@ -23,21 +23,99 @@
                             src="{{ asset('foto/' . $properti->fotoproperti) }}" class="img-fluid"
                             alt="Colorlib Template"></a>
                 </div>
-
                 <div class="col-lg-9 product-details pl-md-6 ftco-animate">
                     <h1 class="text-bold text-uppercase text-">{{ $properti->namaproperti }}</h1>
                     <h1 class="price"><span class="text-normal">Rp. {{ number_format($properti->hargaproperti) }}</span>
                     </h1>
                     <br>
-
                     <h4>Deskripsi</h4>
                     <hr>
                     <p>{!! $properti->deskripsiproperti !!} </p>
-
                     <h4>Detail Properti</h4>
                     <hr>
-                    <p>{!! $properti->fitur !!} </p>
+                    <div class="container mt-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">ID Listing</div>
+                                    <div class="col-6">{{ $properti->tipe }}{{ $properti->idproperti }}</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Tipe</div>
+                                    <div class="col-6">{{ $properti->tipe }}/{{ $properti->luas }}</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Luas Bangunan</div>
+                                    <div class="col-6">{{ $properti->tipe }}m<sup>2</sup></div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Luas Tanah</div>
+                                    <div class="col-6">{{ $properti->luas }}m<sup>2</sup></div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Harga DP</div>
+                                    <div class="col-6">Rp
+                                        {{ number_format($properti->hargaproperti / 100 + 500000, 0, ',', '.') }}</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Kondisi Bangunan</div>
+                                    <div class="col-6">Baru</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Lokasi Kapling</div>
+                                    <div class="col-6">B-1</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Jalur Mobil</div>
+                                    <div class="col-6">Ya</div>
+                                </div>
 
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Terdaftar pada</div>
+                                    <div class="col-6">{{$properti->tanggal}}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Interior</div>
+                                    <div class="col-6">Tak berperabot</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Kamar Tidur</div>
+                                    <div class="col-6">2</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Kamar Mandi</div>
+                                    <div class="col-6">1</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Ruang Tamu</div>
+                                    <div class="col-6">1</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Garasi</div>
+                                    <div class="col-6">0</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Carport</div>
+                                    <div class="col-6">1</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Saluran Telepon</div>
+                                    <div class="col-6">Tidak</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Listrik</div>
+                                    <div class="col-6">1300 W</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="col-6 font-weight-bold">Air Pam / Tanah</div>
+                                    <div class="col-6">Air Pam</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <p>{!! $properti->fitur !!} </p> --}}
                 </div>
                 <div class="col-lg-6 product-details ftco-animate">
                     <form method="post" action="{{ url('home/pesan') }}">
@@ -57,7 +135,7 @@
             </div>
         </div>
     </section>
-    <section class="ftco-section">
+    <section class="py-5">
         <div class="container">
             <h2 class="text-center mb-2">View 3D</h2>
             <div class="embed-responsive embed-responsive-16by9">

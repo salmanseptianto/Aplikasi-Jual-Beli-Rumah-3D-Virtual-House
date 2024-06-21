@@ -22,7 +22,7 @@
         </a>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-2">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <form id="searchForm" action="{{ route('properti.search') }}" method="GET">
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <section class="ftco-section">
+    <section class="py-5">
         @if (Session::has('alert'))
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
@@ -109,32 +109,35 @@
                     @foreach ($propertis as $p)
                         <div class="col-md-4 d-flex">
                             <div class="product ftco-animate">
-                                <div class="img d-flex align-items-center justify-content-center"
-                                    style="background-image: url('{{ asset('foto/' . $p->fotoproperti) }}');">
-                                </div>
-                                <div class="text text-center">
-                                    <p class="property-title">{{ $p->namaproperti }}</p>
-                                    <p class="property-price">IDR. {{ number_format($p->hargaproperti, 0, ',', '.') }}</p>
-                                </div>
-                                <div class="property-info">
-                                    <div class="property-feature">
-                                        <i class="fa fa-bed" aria-hidden="true"></i>
-                                        <span class="property-bedrooms">{{ $p->kamartidur }} Kamar Tidur</span>
+                                <a href="{{ url('home/detail/' . $p->idproperti) }}">
+                                    <div class="img d-flex align-items-center justify-content-center"
+                                        style="background-image: url('{{ asset('foto/' . $p->fotoproperti) }}');">
                                     </div>
-                                    <div class="property-feature">
-                                        <i class="fa fa-bath" aria-hidden="true"></i>
-                                        <span class="property-bathrooms">{{ $p->kamarmandi }} Kamar Mandi</span>
+                                    <div class="text text-center">
+                                        <p class="property-title">{{ $p->namaproperti }}</p>
+                                        <p class="property-price">IDR. {{ number_format($p->hargaproperti, 0, ',', '.') }}
+                                        </p>
                                     </div>
-                                    <div class="property-feature">
-                                        <i class="fa fa-globe" aria-hidden="true"></i>
-                                        <span class="property-area">{{ $p->luas }}m<sup>2</sup></span>
+                                    <div class="property-info">
+                                        <div class="property-feature">
+                                            <i class="fa fa-bed text-muted" aria-hidden="true"></i>
+                                            <span class="property-bedrooms">{{ $p->kamartidur }} Kamar Tidur</span>
+                                        </div>
+                                        <div class="property-feature">
+                                            <i class="fa fa-bath text-muted" aria-hidden="true"></i>
+                                            <span class="property-bathrooms">{{ $p->kamarmandi }} Kamar Mandi</span>
+                                        </div>
+                                        <div class="property-feature">
+                                            <i class="fa fa-globe text-muted" aria-hidden="true"></i>
+                                            <span class="property-area">Luas {{ $p->luas }}m<sup>2</sup></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="text text-center">
-                                    <a href="{{ url('home/detail/' . $p->idproperti) }}">
-                                        <button type="submit" class="btn btn-danger float-none">Buy Now</button>
-                                    </a>
-                                </div>
+                                    <div class="text text-center">
+                                        {{-- <a href="{{ url('home/detail/' . $p->idproperti) }}">
+                                            <button type="submit" class="btn btn-danger float-none">Buy Now</button>
+                                        </a> --}}
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     @endforeach

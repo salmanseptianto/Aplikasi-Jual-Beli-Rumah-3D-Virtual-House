@@ -94,7 +94,8 @@
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 96 m<sup>2</sup>
                                     (6x14m)</li>
                             </ul>
-                            <a href="#team" class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a>
+                            {{-- <a href="{{ url('properti/search?tipe=54&search=') }}"
+                                class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a> --}}
                         </div>
                     </div>
                 </div>
@@ -114,7 +115,8 @@
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 60 m<sup>2</sup>
                                     (6x10m)</li>
                             </ul>
-                            <a href="#team" class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a>
+                            {{-- <a href="{{ url('properti/search?tipe=30&search=') }}"
+                                class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a> --}}
                         </div>
                     </div>
                 </div>
@@ -134,7 +136,8 @@
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 98 m<sup>2</sup>
                                     (7x14m)</li>
                             </ul>
-                            <a href="#team" class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a>
+                            {{-- <a href="{{ url('properti/search?tipe=45&search=') }}"
+                                class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a> --}}
                         </div>
                     </div>
                 </div>
@@ -142,6 +145,144 @@
         </div>
     </section>
 
+    <section class="bg-navy py-5 mb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9 text-center text-lg-start mb-4 mb-lg-0">
+                    <h3>Dapatkan Unitnya Sebelum Kehabisan!!!</h3>
+                    <p>Kapan lagi bisa dapat Rumah Subsidi di Pusat Kota.
+                        Unit terbatas! Jangan sampai kamu menyesal karena tidak mengambil kesempatan ini.
+                        Silahkan pikirkan dan segera ambil keputusan!!!
+                    </p>
+                </div>
+                <div class="col-lg-3 text-center text-lg-end">
+                    <a class="btn btn-danger" href="{{ url('home/properti') }}">Beli Sekarang Juga!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container" data-aos="fade-up">
+            <div class="section-title text-center">
+                <h2>Pilihan Tipe Rumah</h2>
+                <p>Kamu bisa memilih tipe rumah sesuai keinginan dan kebutuhanmu</p>
+            </div>
+            <div class="row justify-content-center" data-aos="fade-right" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('foto/denah30.png') }}" class="card-img-top img-fluid" alt="denah30">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('foto/denah45.png') }}" class="card-img-top img-fluid" alt="denah45">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('foto/denah54.png') }}" class="card-img-top img-fluid" alt="denah54">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title text-center faq-title">
+                <h2>Sering Ditanyakan</h2>
+                <p>Berikut ini beberapa pertanyaan yang sering ditanyakan kepada kami. Jika kamu masih ada hal yang ingin
+                    ditanyakan, silakan hubungi marketing kami.</p>
+            </div>
+            <div class="accordion" id="faqAccordion">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="false" aria-controls="collapseOne"><i class="fa fa-info-circle"
+                            aria-hidden="true"></i>
+                        Apakah Sudah Siap Huni?
+                    </button>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Saat ini kami menggunakan sistem inden (pesan bangun). Setelah kamu melakukan pembayaran DP dan
+                            biaya lain-lain, rumah segera dibangun. Untuk program subsidi, rumah sudah dibangun 80% sebelum
+                            akad bank. Jadi, setelah akad bank dan pengajuan KPR disetujui, rumah bisa langsung ditempati.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-info-circle"
+                            aria-hidden="true"></i>
+                        Berapa Biaya Awal Hingga Terima Kunci?
+                    </button>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Biaya sampai terima kunci kurang lebih 35 juta. Untuk rincian biaya, silakan hubungi marketing
+                            kami.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-info-circle"
+                            aria-hidden="true"></i>
+                        Bagaimana cara melakukan booking awal melalui website?
+                    </button>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            1. Buat akun terlebih dahulu untuk pengguna baru, apabila sudah memiliki akun maka login
+                            terlebih dahulu dengan akun yang sudah anda buat.
+                            <br>
+                            2. Setelah itu pilih properti yang ingin anda beli pada halaman properti sebelum anda
+                            membeli properti yang akan dibeli pastikan sesuai dengan apa yang anda inginkan.
+                            <br>
+                            3. Pilih Beli sekarang untuk memasukan kedalam keranjang lalu lakukan checkout pembelian.
+                            <br>
+                            4. Lakukan upload bukti pembayaran serta lakukan pemberkasan untuk melakukan pengajuan KPR.
+                            <br>
+                            5. Setelah melakukan upload bukti pembayaran tunggu hingga pihak marketing mengkonfirmasi
+                            pembelian anda.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour"
+                        aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-info-circle"
+                            aria-hidden="true"></i>
+                        Bagaimana Cara Pemesanan?
+                    </button>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Untuk pemesanan, Anda bisa datang ke lokasi perumahan untuk survei terlebih dahulu atau anda
+                            dapat melihat melalui website kami yang dimana sudah terdapat beberapa vitur seperti virtual
+                            tour. Kemudian,
+                            Anda bisa pilih unit rumah yang diinginkan dan menyelesaikan administrasi di kantor
+                            pemasaran
+                            atau melalui website ini.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive"
+                        aria-expanded="false" aria-controls="collapseFive"><i class="fa fa-info-circle"
+                            aria-hidden="true"></i>
+                        Apa Saja Persyaratannya?
+                    </button>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFve" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Persyaratan pengajuan KPR (Kredit Pemilikan Rumah) : Foto 3×4 (suami istri), Foto E-KTP,
+                            Fotokopi buku nikah, Fotokopi Kartu Keluarga, Rekening Koran Tabungan 3 bulan terakhir, slip
+                            gaji asli 3 bulan terakhir, Fotokopi NPWP, Surat Keterangan kerja/SK pegawai. Dan tambahan
+                            dokumen bagi wirausaha : Gambar Denah lokasi usaha, Fotokopi SIUP/TDP/SKU, dan Laporan
+                            Keuangan
+                            usaha 3 bulan terakhir.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="py-4">
         <div class="container aos-init aos-animate" data-aos="fade-up">
             <div class="row">
@@ -171,31 +312,6 @@
                         <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1"
                             class="purecounter">48</span>
                         <p>Terjual</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container" data-aos="fade-up">
-            <div class="section-title text-center">
-                <h2>Pilihan Tipe Rumah</h2>
-                <p>Kamu bisa memilih tipe rumah sesuai keinginan dan kebutuhanmu</p>
-            </div>
-            <div class="row justify-content-center" data-aos="fade-right" data-aos-delay="100">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="{{ asset('foto/denah30.png') }}" class="card-img-top img-fluid" alt="denah30">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="{{ asset('foto/denah45.png') }}" class="card-img-top img-fluid" alt="denah45">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="{{ asset('foto/denah54.png') }}" class="card-img-top img-fluid" alt="denah54">
                     </div>
                 </div>
             </div>

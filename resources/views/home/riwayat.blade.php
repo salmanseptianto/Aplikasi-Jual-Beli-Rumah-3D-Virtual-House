@@ -36,10 +36,10 @@
                             <table class="table">
                                 <thead class="bg-danger text-white">
                                     <tr>
-                                        <th width="10%">No</th>
-                                        <th width="25%">Daftar</th>
-                                        <th>Tanggal</th>
-                                        <th>Total</th>
+                                        <th>No</th>
+                                        <th width="15%">Daftar</th>
+                                        <th width="15%">Tanggal</th>
+                                        <th width="15%">Total</th>
                                         <th>Opsi</th>
                                         <th>Bukti Pembayaran</th>
                                     </tr>
@@ -70,7 +70,7 @@
                                                         Waktu pembayaran<br>telah habis
                                                     @else
                                                         <a href="{{ url('home/pembayaran/' . $db->idpembelianreal) }}"
-                                                            class="btn btn-danger">Upload Bukti Pembayaran Sebelum
+                                                            class="btn btn-danger">Upload Bukti Pembayaran & Berkas Sebelum
                                                             {{ tanggal($harideadline) . ' - Jam ' . $jamdeadline }}</a>
                                                     @endif
                                                 @elseif ($db->statusbeli == 'Sudah Upload Bukti Pembayaran')

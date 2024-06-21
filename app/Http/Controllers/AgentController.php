@@ -256,6 +256,38 @@ class AgentController extends Controller
         $namafoto = $request->file('foto')->getClientOriginalName();
         $request->file('foto')->move(public_path('foto'), $namafoto);
 
+        $days = [
+            'Sunday' => 'Minggu',
+            'Monday' => 'Senin',
+            'Tuesday' => 'Selasa',
+            'Wednesday' => 'Rabu',
+            'Thursday' => 'Kamis',
+            'Friday' => 'Jumat',
+            'Saturday' => 'Sabtu'
+        ];
+
+        $months = [
+            'January' => 'Januari',
+            'February' => 'Februari',
+            'March' => 'Maret',
+            'April' => 'April',
+            'May' => 'Mei',
+            'June' => 'Juni',
+            'July' => 'Juli',
+            'August' => 'Agustus',
+            'September' => 'September',
+            'October' => 'Oktober',
+            'November' => 'November',
+            'December' => 'Desember'
+        ];
+
+
+        $dayName = $days[date('l')];
+        $day = date('d');
+        $month = $months[date('F')];
+        $year = date('Y');
+
+        $tanggal = "$dayName, $day $month $year";
 
         DB::table('properti')->insert([
             'namaproperti' => $request->input('nama'),
@@ -270,6 +302,7 @@ class AgentController extends Controller
             'fitur' => $request->input('fitur'),
             'links' => $request->input('links'),
             'checkout_status' => 0,
+            'tanggal' => $tanggal,
         ]);
 
         session()->flash('alert', 'Properti berhasil ditambahkan. 😊');
