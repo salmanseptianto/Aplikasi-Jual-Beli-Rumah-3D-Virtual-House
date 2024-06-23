@@ -149,6 +149,7 @@ class AdminController extends Controller
             'kamarmandi' => 'required|integer',
             'tipe' => 'required|string|max:255',
             'fitur' => 'required|string',
+            'daerah' => 'required|string',
             'links' => 'required|url',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
@@ -209,6 +210,7 @@ class AdminController extends Controller
             'luas' => $request->input('luas'),
             'perumahan' => $request->input('perumahan'),
             'fitur' => $request->input('fitur'),
+            'daerah' => $request->input('daerah'),
             'links' => $request->input('links'),
             'checkout_status' => 0,
             'tanggal' => $tanggal,
@@ -289,7 +291,7 @@ class AdminController extends Controller
         $pengguna = DB::table('pengguna')
             ->where(function ($query) {
                 $query->where('level', 'Agent');
-                    // ->orWhere('level', 'Agent'); 
+                // ->orWhere('level', 'Agent'); 
             })
             ->get();
 

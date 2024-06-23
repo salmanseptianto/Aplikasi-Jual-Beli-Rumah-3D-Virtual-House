@@ -32,20 +32,20 @@
                             Lihat Semua
                         </label>
                         <label class="btn btn-outline-primary">
-                            <input type="radio" name="perumahan" id="dijual" value="Triehans Village"
+                            <input type="radio" name="perumahan" id="dijual" value="subsidi"
                                 autocomplete="off">
-                            Triehans Village
+                            Subsidi
                         </label>
                         <label class="btn btn-outline-primary">
-                            <input type="radio" name="perumahan" id="terjual" value="Griya Sakinah" autocomplete="off">
-                            Griya Sakinah
+                            <input type="radio" name="perumahan" id="terjual" value="Komersil" autocomplete="off">
+                           Komersil
                         </label>
                     </div>
                     <div class="form-row align-items-center">
                         <div class="col-auto">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fa fa-money"></i></div>
+                                    <div class="input-group-text"><i class="fa fa-home"></i></div>
                                 </div>
                                 <select class="form-control" name="tipe">
                                     <option value="" disabled selected>Tipe Rumah</option>

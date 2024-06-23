@@ -69,8 +69,8 @@
                             <label>Perumahan</label>
                             <select class="form-control" name="perumahan">
                                 <option value="" disabled selected>Perumahan</option>
-                                <option value="Triehans Village">Triehans Village</option>
-                                <option value="Griya Sakinah">Griya Sakinah</option>
+                                <option value="Subsidi">Subsidi</option>
+                                <option value="Komersil">Komersil</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -102,64 +102,49 @@
                         <div class="form-group">
                             <label>Detail Properti</label>
                             <p class="alert alert-danger">* rubah Deskripsi sesuai kebutuhan anda !!!</p>
-                            <textarea class="form-control" name="fitur" id="editor" rows="10">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <ul>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Luas Bangunan : </span>isi sesuai luas bangunan anda</li>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Luas Tanah : </span>isi sesuai luas tanah anda</li>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Kondisi Bangunan : </span>BAIK/BAGUS/BAGUS SEKALI</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <ul>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Menghadap : </span>SELATAN</li>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Jumlah Lantai : </span>2 LANTAI</li>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Sertifikat : </span>HAK MILIK</li>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Interior  : </span>No</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <ul>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Saluran Telepon : </span>YES</li>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Listrik : </span>YES</li>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Supply Air : </span>Air Pam / Air Tanah</li>
-                                            <li class="mb-3"><span class="text-secondary font-weight-bold">Jalur Mobil : </span>YES</li>
-                                        </ul>
+                            <div class="align-items-center">
+                                <div class="col-auto">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-home" aria-hidden="true"></i></div>
+                                        </div>
+                                        <select class="form-control" name="daerah">
+                                            <option value="" disabled selected>Kapling</option>
+                                            <?php
+                                            $letters = range('A', 'T');
+                                            
+                                            foreach ($letters as $letter) {
+                                                echo "<option value='$letter'>$letter</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        <select class="form-control" name="fitur">
+                                            <option value="" disabled selected>Nomer</option>
+                                            <?php
+                                            $letters = range('1', '47');
+                                            
+                                            foreach ($letters as $letter) {
+                                                echo "<option value='$letter'>$letter</option>";
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
-                                
-                            </textarea>
-                            <script>
-                                tinymce.init({
-                                    selector: 'textarea#editor',
-                                    height: 500,
-                                    menubar: false,
-                                    plugins: [
-                                        'advlist autolink lists link image charmap print preview anchor',
-                                        'searchreplace visualblocks code fullscreen',
-                                        'insertdatetime media table paste code help wordcount'
-                                    ],
-                                    toolbar: 'undo redo | formatselect | ' +
-                                        'bold italic backcolor | alignleft aligncenter ' +
-                                        'alignright alignjustify | bullist numlist outdent indent | ' +
-                                        'removeformat | help'
-                                });
-                            </script>
-                        </div>
-                        <div class="form-group">
-                            <label>link 3D</label>
-                            <input type="text" class="form-control" name="links" id="links" rows="100"></input>
-                        </div>
-                        <div class="form-group">
-                            <label>Foto</label>
-                            <div class="letak-input" style="margin-bottom: 10px;">
-                                <input type="file" class="form-control"
-                                    name="foto"accept="image/jpeg, image/png, image/jpg, image/gif">
                             </div>
-                        </div>
-                        <button class="btn btn-danger" name="save"><i
-                                class="glyphicon glyphicon-saved"></i>Simpan</a></button>
+                            <div class="form-group">
+                                <label>link 3D</label>
+                                <input type="text" class="form-control" name="links" id="links"
+                                    rows="100"></input>
+                            </div>
+                            <div class="form-group">
+                                <label>Foto</label>
+                                <div class="letak-input" style="margin-bottom: 10px;">
+                                    <input type="file" class="form-control"
+                                        name="foto"accept="image/jpeg, image/png, image/jpg, image/gif">
+                                </div>
+                            </div>
+                            <button class="btn btn-danger" name="save"><i
+                                    class="glyphicon glyphicon-saved"></i>Simpan</a></button>
                     </form>
                 </div>
             </div>

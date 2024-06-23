@@ -70,8 +70,8 @@
                             <label>Perumahan</label>
                             <select class="form-control" name="perumahan">
                                 <option value="{{ $properti->perumahan }}">{{ $properti->perumahan }} (dipilih)</option>
-                                <option value="Triehans Village">Triehans Village</option>
-                                <option value="Griya Sakinah">Griya Sakinah</option>
+                                <option value="Subsidi">Subsidi</option>
+                                <option value="Komersil">Komersil</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -97,23 +97,36 @@
                         <div class="form-group">
                             <label>Detail Properti</label>
                             <p class="alert alert-danger">* rubah Deskripsi sesuai kebutuhan anda !!!</p>
-                            <textarea class="form-control" name="fitur" id="editor" rows="10">{{ $properti->fitur }}</textarea>
-                            <script>
-                                tinymce.init({
-                                    selector: 'textarea#editor',
-                                    height: 500,
-                                    menubar: false,
-                                    plugins: [
-                                        'advlist autolink lists link image charmap print preview anchor',
-                                        'searchreplace visualblocks code fullscreen',
-                                        'insertdatetime media table paste code help wordcount'
-                                    ],
-                                    toolbar: 'undo redo | formatselect | ' +
-                                        'bold italic backcolor | alignleft aligncenter ' +
-                                        'alignright alignjustify | bullist numlist outdent indent | ' +
-                                        'removeformat | help'
-                                });
-                            </script>
+                            <div class="align-items-center">
+                                <div class="col-auto">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-home" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <select class="form-control" name="daerah">
+                                            <option value="" disabled selected>Kapling</option>
+                                            <?php
+                                            $letters = range('A', 'T');
+                                            
+                                            foreach ($letters as $letter) {
+                                                echo "<option value='$letter'>$letter</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        <select class="form-control" name="fitur">
+                                            <option value="" disabled selected>Nomer</option>
+                                            <?php
+                                            $letters = range('1', '47');
+                                            
+                                            foreach ($letters as $letter) {
+                                                echo "<option value='$letter'>$letter</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>link 3D</label>

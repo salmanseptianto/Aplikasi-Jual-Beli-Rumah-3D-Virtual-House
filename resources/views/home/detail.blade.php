@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="item row">
                                     <div class="col-6 font-weight-bold">Lokasi Kapling</div>
-                                    <div class="col-6">B-1</div>
+                                    <div class="col-6">{{$properti->daerah}}-{{$properti->fitur}}</div>
                                 </div>
                                 <div class="item row">
                                     <div class="col-6 font-weight-bold">Jalur Mobil</div>
@@ -101,8 +101,8 @@
                                     <div class="col-6">1</div>
                                 </div>
                                 <div class="item row">
-                                    <div class="col-6 font-weight-bold">Saluran Telepon</div>
-                                    <div class="col-6">Tidak</div>
+                                    <div class="col-6 font-weight-bold">Jenis Perumahan</div>
+                                    <div class="col-6">{{$properti->perumahan}}</div>
                                 </div>
                                 <div class="item row">
                                     <div class="col-6 font-weight-bold">Listrik</div>
