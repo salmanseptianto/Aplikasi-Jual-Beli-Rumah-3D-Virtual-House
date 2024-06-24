@@ -104,10 +104,10 @@
                                         <th>{{ $pembayaran->nama }}</th>
                                     </tr>
                                     {{-- @foreach ($pengguna as $p) --}}
-                                    <tr>
+                                    {{-- <tr>
                                         <th>Jenis Kelamin</th>
                                         <th>{{ $pengguna->kelamin }}</th>
-                                    </tr>
+                                    </tr> --}}
                                     {{-- @endforeach --}}
 
                                     <tr>

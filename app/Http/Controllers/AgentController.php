@@ -240,7 +240,6 @@ class AgentController extends Controller
             'kamarmandi' => 'required|integer',
             'tipe' => 'required|string|max:255',
             'fitur' => 'required|string',
-            'kapling' => 'required|string',
             'links' => 'required|url',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
@@ -257,38 +256,6 @@ class AgentController extends Controller
         $namafoto = $request->file('foto')->getClientOriginalName();
         $request->file('foto')->move(public_path('foto'), $namafoto);
 
-        $days = [
-            'Sunday' => 'Minggu',
-            'Monday' => 'Senin',
-            'Tuesday' => 'Selasa',
-            'Wednesday' => 'Rabu',
-            'Thursday' => 'Kamis',
-            'Friday' => 'Jumat',
-            'Saturday' => 'Sabtu'
-        ];
-
-        $months = [
-            'January' => 'Januari',
-            'February' => 'Februari',
-            'March' => 'Maret',
-            'April' => 'April',
-            'May' => 'Mei',
-            'June' => 'Juni',
-            'July' => 'Juli',
-            'August' => 'Agustus',
-            'September' => 'September',
-            'October' => 'Oktober',
-            'November' => 'November',
-            'December' => 'Desember'
-        ];
-
-
-        $dayName = $days[date('l')];
-        $day = date('d');
-        $month = $months[date('F')];
-        $year = date('Y');
-
-        $tanggal = "$dayName, $day $month $year";
 
         DB::table('properti')->insert([
             'namaproperti' => $request->input('nama'),
@@ -301,10 +268,8 @@ class AgentController extends Controller
             'luas' => $request->input('luas'),
             'perumahan' => $request->input('perumahan'),
             'fitur' => $request->input('fitur'),
-            'kapling' => $request->input('kapling'),
             'links' => $request->input('links'),
             'checkout_status' => 0,
-            'tanggal' => $tanggal,
         ]);
 
         session()->flash('alert', 'Properti berhasil ditambahkan. 😊');
@@ -330,7 +295,6 @@ class AgentController extends Controller
             'kamarmandi' => 'required|integer',
             'tipe' => 'required|string|max:255',
             'fitur' => 'required|string',
-            'daerah' => 'required|string',
             'luas' => 'required|string',
             'perumahan' => 'required|string',
             'links' => 'required|url',
@@ -355,7 +319,6 @@ class AgentController extends Controller
             'luas' => $request->input('luas'),
             'perumahan' => $request->input('perumahan'),
             'fitur' => $request->input('fitur'),
-            'daerah' => $request->input('daerah'),
             'links' => $request->input('links'),
         ];
 
