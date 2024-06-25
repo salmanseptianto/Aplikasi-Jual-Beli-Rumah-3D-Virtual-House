@@ -81,7 +81,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Rumah Tipe 54/98</h5>
+                            <h5 class="card-title">Rumah Tipe 45/84</h5>
                             <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>349 Jt<span>(Komersil)</span></h6>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
@@ -91,7 +91,7 @@
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> Carport</li>
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Bangunan 45 m<sup>2</sup>
                                 </li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 96 m<sup>2</sup>
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 84 m<sup>2</sup>
                                     (6x14m)</li>
                             </ul>
                             {{-- <a href="{{ url('properti/search?tipe=54&search=') }}"
@@ -102,8 +102,8 @@
                 <div class="col-md-4 ">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Rumah Subsidi Tipe 30/60</h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>900 Rb <span>(perbulan)</span></h6>
+                            <h5 class="card-title">Rumah Tipe 30/60</h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>166 Jt <span>(Subsidi)</span></h6>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> 1 Kamar Mandi</li>
@@ -123,7 +123,7 @@
                 <div class="col-md-4 ">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Rumah Tipe 45/84</h5>
+                            <h5 class="card-title">Rumah Tipe 54/98</h5>
                             <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>425 Jt<span>(Komersil)</span></h6>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
@@ -131,7 +131,7 @@
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> Ruang Tamu</li>
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> Dapur</li>
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> Carport</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Bangunan 45
+                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Bangunan 54
                                     m<sup>2</sup></li>
                                 <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 98 m<sup>2</sup>
                                     (7x14m)</li>
