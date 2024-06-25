@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="item row">
                                     <div class="col-6 font-weight-bold">Lokasi Kapling</div>
-                                    <div class="col-6">{{$properti->daerah}}-{{$properti->fitur}}</div>
+                                    <div class="col-6">{{$properti->daerah}}-{{$properti->nomer}}</div>
                                 </div>
                                 <div class="item row">
                                     <div class="col-6 font-weight-bold">Jalur Mobil</div>
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <p>{!! $properti->fitur !!} </p> --}}
+                    {{-- <p>{!! $properti->nomer !!} </p> --}}
                 </div>
                 <div class="col-lg-6 product-details ftco-animate">
                     <form method="post" action="{{ url('home/pesan') }}">

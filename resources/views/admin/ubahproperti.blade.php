@@ -75,7 +75,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Fitur</label>
+                            <label>Deskripsi</label>
                             <textarea class="form-control" name="deskripsi" id="editor" rows="10">{{ $properti->deskripsiproperti }}</textarea>
                             <script>
                                 tinymce.init({
@@ -105,7 +105,8 @@
                                             </div>
                                         </div>
                                         <select class="form-control" name="daerah">
-                                            <option value="" disabled selected>Kapling</option>
+                                            <option value="" disabled selected>Kapling
+                                            </option>
                                             <?php
                                             $letters = range('A', 'T');
                                             
@@ -114,16 +115,16 @@
                                             }
                                             ?>
                                         </select>
-                                        <select class="form-control" name="fitur">
-                                            <option value="" disabled selected>Nomer</option>
-                                            <?php
-                                            $letters = range('1', '47');
-                                            
-                                            foreach ($letters as $letter) {
-                                                echo "<option value='$letter'>$letter</option>";
-                                            }
-                                            ?>
+                                        <select class="form-control" name="nomer">
+                                            <option value="{{ $properti->nomer }}" disabled selected>
+                                                Nomer</option>
+                                            @for ($i = 1; $i <= 47; $i++)
+                                                <option value="{{ $i }}"
+                                                    {{ $properti->nomer == $i ? 'selected' : '' }}>{{ $i }}
+                                                </option>
+                                            @endfor
                                         </select>
+
                                     </div>
                                 </div>
                             </div>

@@ -74,7 +74,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Fitur</label>
+                            <label>Deskripsi</label>
                             <textarea class="form-control" name="deskripsi" id="deskripsi" rows="10">
                                 Dijual Rumah Baru di Perumahan Triehans Village Tanjung Kab.Brebes. Lokasi Rumah strategis dekat kemana2, Lingkungan perumahan tenang aman nyaman dan bebas banjir
                             </textarea>
@@ -118,7 +118,7 @@
                                             }
                                             ?>
                                         </select>
-                                        <select class="form-control" name="fitur">
+                                        <select class="form-control" name="nomer">
                                             <option value="" disabled selected>Nomer</option>
                                             <?php
                                             $letters = range('1', '47');

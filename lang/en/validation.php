@@ -194,5 +194,9 @@ return [
         'email' => 'Email',
         'telepon' => 'Telepon',
         'password' => 'Password',
+        'nomer' => 'Nomer',
+        'daerah' => 'Daerah',
+        'luas' => 'Luas',
+        'perumahan' => 'Perumahan',
     ],
 ];

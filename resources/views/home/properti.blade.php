@@ -32,13 +32,12 @@
                             Lihat Semua
                         </label>
                         <label class="btn btn-outline-primary">
-                            <input type="radio" name="perumahan" id="dijual" value="subsidi"
-                                autocomplete="off">
+                            <input type="radio" name="perumahan" id="dijual" value="subsidi" autocomplete="off">
                             Subsidi
                         </label>
                         <label class="btn btn-outline-primary">
                             <input type="radio" name="perumahan" id="terjual" value="Komersil" autocomplete="off">
-                           Komersil
+                            Komersil
                         </label>
                     </div>
                     <div class="form-row align-items-center">
@@ -107,7 +106,7 @@
             <div class="row">
                 @if ($propertis->count() > 0)
                     @foreach ($propertis as $p)
-                        <div class="col-md-4 d-flex">
+                        <div class="col-md-5 d-flex">
                             <div class="product ftco-animate">
                                 <a href="{{ url('home/detail/' . $p->idproperti) }}">
                                     <div class="img d-flex align-items-center justify-content-center"
@@ -131,12 +130,12 @@
                                             <i class="fa fa-globe text-muted" aria-hidden="true"></i>
                                             <span class="property-area">Luas {{ $p->luas }}m<sup>2</sup></span>
                                         </div>
+                                        <div class="property-feature">
+                                            <i class="fa fa-home text-muted" aria-hidden="true"></i>
+                                            <span class="property-area">Rumah {{ $p->perumahan }}</span>
+                                        </div>
                                     </div>
-                                    <div class="text text-center">
-                                        {{-- <a href="{{ url('home/detail/' . $p->idproperti) }}">
-                                            <button type="submit" class="btn btn-danger float-none">Buy Now</button>
-                                        </a> --}}
-                                    </div>
+                                    <p class="text-justify small bold">{{ strip_tags($p->deskripsiproperti) }} </p>
                                 </a>
                             </div>
                         </div>
