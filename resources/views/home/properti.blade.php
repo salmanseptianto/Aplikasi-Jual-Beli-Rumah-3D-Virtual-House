@@ -106,7 +106,7 @@
             <div class="row">
                 @if ($propertis->count() > 0)
                     @foreach ($propertis as $p)
-                        <div class="col-md-5 d-flex">
+                        <div class="col-md-4 d-flex">
                             <div class="product ftco-animate">
                                 <a href="{{ url('home/detail/' . $p->idproperti) }}">
                                     <div class="img d-flex align-items-center justify-content-center"
@@ -132,10 +132,12 @@
                                         </div>
                                         <div class="property-feature">
                                             <i class="fa fa-home text-muted" aria-hidden="true"></i>
-                                            <span class="property-area">Rumah {{ $p->perumahan }}</span>
+                                            <span class="property-area">{{ $p->perumahan }}</span>
                                         </div>
                                     </div>
-                                    <p class="text-justify small bold">{{ strip_tags($p->deskripsiproperti) }} </p>
+                                    <p class="text-justify small bold text-muted">
+                                        {{ Str::limit(strip_tags($p->deskripsiproperti), 100) }}
+                                    </p>
                                 </a>
                             </div>
                         </div>
@@ -148,6 +150,8 @@
                     </div>
                 @endif
             </div>
+
+
             <!-- Pagination -->
             <div class="row mt-4">
                 <div class="col-md-12 text-center">

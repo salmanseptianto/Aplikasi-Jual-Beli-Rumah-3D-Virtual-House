@@ -29,9 +29,9 @@
                                     <td>{{ $nomor }}</td>
                                     <td>{{ $b->judul }}</td>
                                     <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis;">
-                                        {{ Str::limit($b->deskripsi, 25) }}
+                                        {{ Str::limit(strip_tags($b->deskripsi), 50) }}
                                     </td>
-                                    
+
                                     <td>
                                         <img src="{{ asset('foto/' . $b->foto) }}" width="100px">
                                     </td>
