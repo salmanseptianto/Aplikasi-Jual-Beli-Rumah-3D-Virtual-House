@@ -109,11 +109,13 @@
                         <h2 class="ftco-heading-2">Alamat</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon fa fa-map marker"></span><span class="text">
-                                        <a href="https://maps.app.goo.gl/vNCYYzTcu22j5J1g7">Jl. Cendrawasih, Tanjung,
-                                            Kec. Tj., Kabupaten Brebes, Jawa Tengah 52254</a>
-                                    </span></li>
-
+                                <li><span class="icon fa fa-map marker"></span><span>
+                                        <a class="text-white"
+                                            href="https://maps.app.goo.gl/vNCYYzTcu22j5J1g7">JL.CENDRAWASIH PANTURA
+                                            BREBES-TEGAL TANJUNG, BREBES (SEBELAH TIMUR KANTOR KECAMATAN TANJUNG)
+                                        </a>
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -180,7 +182,7 @@
     <script>
         new PureCounter();
     </script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('assets/home/js/script.js') }}"></script>
     <script>

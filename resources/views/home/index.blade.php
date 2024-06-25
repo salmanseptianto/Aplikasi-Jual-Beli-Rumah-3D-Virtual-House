@@ -63,11 +63,11 @@
                 <div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
                     <div class="heading-section">
                         <h3 class="mt-4">Tentang kami</h3>
-                        <p>
-                            Properti Virtual adalah blogs properti yang berfokus pada penjualan berbagai jenis properti di
-                            Brebes. Dengan pengalaman yang luas dan pemahaman mendalam tentang pasar properti di kawasan
-                            tersebut, Properti Virtual telah menjadi mitra terpercaya bagi mereka yang mencari investasi
-                            properti atau tempat tinggal di daerah Brebes.</p>
+                        <p class="text-justify">
+                            Triehans Village merupakan salah satu perumahan yang dikembangkan oleh PT. Kuasa Triehans Semesta.
+                            Berada di daerah Kota Brebes menjadikan Triehans Village memiliki akses yang strategis. Selain
+                            itu, kualitas bangunan yang lebih unggul dibanding perumahan lain menjadi daya tarik tersendiri.
+                        </p>
                     </div>
                 </div>
             </div>
