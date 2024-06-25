@@ -71,13 +71,16 @@
                         </div>
                         <div class="col">
                             <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fa fa-search"></i></div>
+                                </div>
                                 <input type="text" class="form-control" name="search"
                                     value="{{ request()->input('search') }}"
                                     placeholder="Cari berdasarkan lokasi, ID, Property">
                             </div>
                         </div>
                         <div class="col-auto">
-                            <button type="submit" class="btn btn-info mb-2" onclick="submitForm()">Cari</button>
+                            <button type="submit" class="btn btn-info mb-2">Cari</button>
                         </div>
                     </div>
                 </form>
