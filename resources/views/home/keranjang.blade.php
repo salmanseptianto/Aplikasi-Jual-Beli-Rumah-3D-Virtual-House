@@ -70,7 +70,7 @@
             <div class="row justify-content-center mt-4">
                 <div class="col-md-6">
                     <div class="text-center">
-                        <a href="{{ url('home/properti') }}" class="btn btn-warning btn-lg mr-2"><i
+                        <a href="{{ url('home') }}" class="btn btn-warning btn-lg mr-2"><i
                                 class="fa fa-cart-plus mr-2"></i>Lanjutkan Belanja</a>
                         @if (!empty(session('keranjang')))
                             <a href="{{ url('home/checkout') }}" class="btn btn-danger btn-lg">Checkout</a>

@@ -68,9 +68,9 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="{{ url('home') }}" class="nav-link text-light">Home</a></li>
-                    <li class="nav-item active"><a href="{{ url('home/properti') }}"
+                    {{-- <li class="nav-item active"><a href="{{ url('home/properti') }}"
                             class="nav-link text-light">Properti</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item active"><a href="{{ url('home/blog') }}" class="nav-link text-light">Blog</a>
                     </li>
                     @if (session('pengguna'))

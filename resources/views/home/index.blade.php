@@ -1,5 +1,16 @@
 @extends('home.templates.index')
-
+@if (Session::has('alert'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: 'Notification',
+                text: '{{ Session::get('alert') }}',
+                icon: 'info',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+@endif
 @section('page-content')
     <div class="hero-wrap" style="background-image: url('{{ asset('foto/home2.jpg') }}');" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -64,7 +75,8 @@
                     <div class="heading-section">
                         <h3 class="mt-4">Tentang kami</h3>
                         <p class="text-justify">
-                            Triehans Village merupakan salah satu perumahan yang dikembangkan oleh PT. Kuasa Triehans Semesta.
+                            Triehans Village merupakan salah satu perumahan yang dikembangkan oleh PT. Kuasa Triehans
+                            Semesta.
                             Berada di daerah Kota Brebes menjadikan Triehans Village memiliki akses yang strategis. Selain
                             itu, kualitas bangunan yang lebih unggul dibanding perumahan lain menjadi daya tarik tersendiri.
                         </p>
@@ -78,72 +90,67 @@
         <div class="container">
             <h1 class="mb-0 text-center mb-5">HARGA & FASILITAS</h1>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Rumah Tipe 45/84</h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>349 Jt<span>(Komersil)</span></h6>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 1 Kamar Mandi</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Ruang Tamu</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Dapur</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Carport</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Bangunan 45 m<sup>2</sup>
-                                </li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 84 m<sup>2</sup>
-                                    (6x14m)</li>
-                            </ul>
-                            {{-- <a href="{{ url('properti/search?tipe=54&search=') }}"
-                                class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a> --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Rumah Tipe 30/60</h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>166 Jt <span>(Subsidi)</span></h6>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 1 Kamar Mandi</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Ruang Tamu</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Dapur</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Carport</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Bangunan 30 m<sup>2</sup>
-                                </li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 60 m<sup>2</sup>
-                                    (6x10m)</li>
-                            </ul>
-                            {{-- <a href="{{ url('properti/search?tipe=30&search=') }}"
-                                class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a> --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Rumah Tipe 54/98</h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><sup>Rp</sup>425 Jt<span>(Komersil)</span></h6>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 2 Kamar Tidur</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> 1 Kamar Mandi</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Ruang Tamu</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Dapur</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Carport</li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Bangunan 54
-                                    m<sup>2</sup></li>
-                                <li class="list-group-item"><i class="fa fa-check mr-2"></i> Luas Tanah 98 m<sup>2</sup>
-                                    (7x14m)</li>
-                            </ul>
-                            {{-- <a href="{{ url('properti/search?tipe=45&search=') }}"
-                                class="btn btn-info mt-3 d-block mx-auto">Booking Sekarang</a> --}}
-                        </div>
+                <div class="container">
+                    <div class="row">
+                        @if ($properti->count() > 0)
+                            @foreach ($properti as $p)
+                                <div class="col-md-4">
+                                    <div class="card position-relative overflow-hidden">
+                                        <img src="{{ asset('foto/' . $p->fotoproperti) }}" class="card-img-top"
+                                            alt="{{ $p->namaproperti }}"
+                                            style="height: 250px; object-fit: cover; width: 100%;">
+                                        <div class="card-body">
+                                            <h5 class="card-title mt-2">{{ $p->namaproperti }}</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">
+                                                <sup>Rp</sup>{{ number_format($p->hargaproperti, 0, ',', '.') }}
+                                                <span>({{ $p->perumahan }})</span>
+                                            </h6>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check mr-2 text-info"></i> {{ $p->kamartidur }} Kamar
+                                                    Tidur
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check mr-2 text-info"></i> {{ $p->kamarmandi }} Kamar
+                                                    Mandi
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check mr-2 text-info"></i> Ruang Tamu
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check mr-2 text-info"></i> Dapur
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check mr-2 text-info"></i> Carport
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check mr-2 text-info"></i> Luas Bangunan
+                                                    {{ $p->tipe }} m<sup>2</sup>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check mr-2 text-info"></i> Luas Tanah
+                                                    {{ $p->luas }} m<sup>2</sup>
+                                                </li>
+                                            </ul>
+                                            <a href="{{ url('home/detail/' . $p->idproperti) }}"
+                                                class="btn btn-info mt-3 d-block mx-auto">Lihat Detail</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="col-md-12 text-center">
+                                <div class="alert alert-warning" role="alert">
+                                    Maaf, properti tidak ditemukan.
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <section class="bg-navy py-5 mb-5">
         <div class="container">

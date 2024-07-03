@@ -12,44 +12,6 @@ class AdminController extends Controller
     {
         return view('admin.dashboard');
     }
-    public function simpanpengguna(Request $request)
-    {
-        $requiredFields = ['nama', 'email', 'alamat', 'telepon', 'foto', 'password'];
-        foreach ($requiredFields as $field) {
-            if (empty($request->$field)) {
-                return redirect()->back()->with('alert', 'Mohon isi data terlebih dahulu');
-            }
-        }
-
-        $namafoto = $request->file('foto')->getClientOriginalName();
-        $request->file('foto')->move(public_path('foto'), $namafoto);
-
-        $kelamin = $request->input('kelamin');
-
-        if (strlen($request->password) < 6) {
-            return redirect()->back()->with('alert', 'Password harus terdiri dari minimal 6 karakter');
-        }
-
-        $data = [
-            'nama' => $request->nama,
-            'email' => $request->email,
-            'alamat' => $request->alamat,
-            'telepon' => $request->telepon,
-            'fotoprofil' => $namafoto,
-            'password' => $request->password,
-            'level' => 'Agent',
-        ];
-
-        $existingUser = DB::table('pengguna')->where('email', $request->email)->count();
-
-        if ($existingUser == 1) {
-            return redirect()->back()->with('alert', 'Pendaftaran Gagal, email sudah ada');
-        } else {
-            DB::table('pengguna')->insert($data);
-
-            return redirect('admin/pengguna')->with('alert', 'Pendaftaran Berhasil');
-        }
-    }
     public function akun()
     {
         if (session()->has('admin')) {
@@ -119,10 +81,7 @@ class AdminController extends Controller
         session()->flash('success', 'Data pengguna berhasil diperbarui.');
         return redirect('admin/akun');
     }
-    public function tambahpengguna()
-    {
-        return view('admin.tambahagent');
-    }
+
 
     public function properti()
     {
@@ -148,8 +107,6 @@ class AdminController extends Controller
             'kamartidur' => 'required|integer',
             'kamarmandi' => 'required|integer',
             'tipe' => 'required|string|max:255',
-            'nomer' => 'required|string',
-            'daerah' => 'required|string',
             'links' => 'required|url',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
@@ -209,8 +166,6 @@ class AdminController extends Controller
             'tipe' => $request->input('tipe'),
             'luas' => $request->input('luas'),
             'perumahan' => $request->input('perumahan'),
-            'nomer' => $request->input('nomer'),
-            'daerah' => $request->input('daerah'),
             'links' => $request->input('links'),
             'checkout_status' => 0,
             'tanggal' => $tanggal,
@@ -238,7 +193,6 @@ class AdminController extends Controller
             'kamartidur' => 'required|integer',
             'kamarmandi' => 'required|integer',
             'tipe' => 'required|string|max:255',
-            'nomer' => 'required|string',
             'luas' => 'required|string',
             'perumahan' => 'required|string',
             'links' => 'required|url',
@@ -262,7 +216,6 @@ class AdminController extends Controller
             'tipe' => $request->input('tipe'),
             'luas' => $request->input('luas'),
             'perumahan' => $request->input('perumahan'),
-            'nomer' => $request->input('nomer'),
             'links' => $request->input('links'),
         ];
 
@@ -284,22 +237,6 @@ class AdminController extends Controller
         DB::table('properti')->where('idproperti', $id)->delete();
         session()->flash('alert', 'Berhasil menghapus data!');
         return redirect('admin/properti');
-    }
-
-    public function pengguna()
-    {
-        $pengguna = DB::table('pengguna')
-            ->where(function ($query) {
-                $query->where('level', 'Agent');
-                // ->orWhere('level', 'Agent'); 
-            })
-            ->get();
-
-        $data = [
-            'pengguna' => $pengguna,
-        ];
-
-        return view('admin.pengguna', $data);
     }
     public function user()
     {
@@ -402,19 +339,19 @@ class AdminController extends Controller
                 ->where('idpembelian', $id)
                 ->first();
 
-            if ($statusbeli === 'Selesai') {
-                $properti = DB::table('properti')
-                    ->where('idproperti', $pembelian_properti->idproperti)
-                    ->update([
-                        'checkout_status' => 1,
-                    ]);
-            } else {
-                $properti = DB::table('properti')
-                    ->where('idproperti', $pembelian_properti->idproperti)
-                    ->update([
-                        'checkout_status' => 0,
-                    ]);
-            }
+            // if ($statusbeli === 'Selesai') {
+            //     $properti = DB::table('properti')
+            //         ->where('idproperti', $pembelian_properti->idproperti)
+            //         ->update([
+            //             'checkout_status' => 1,
+            //         ]);
+            // } else {
+            //     $properti = DB::table('properti')
+            //         ->where('idproperti', $pembelian_properti->idproperti)
+            //         ->update([
+            //             'checkout_status' => 0,
+            //         ]);
+            // }
 
             return redirect('admin/pembelian');
         }

@@ -61,10 +61,10 @@
                                     <div class="col-6 font-weight-bold">Kondisi Bangunan</div>
                                     <div class="col-6">Baru</div>
                                 </div>
-                                <div class="item row">
+                                {{-- <div class="item row">
                                     <div class="col-6 font-weight-bold">Lokasi Kapling</div>
                                     <div class="col-6">{{$properti->daerah}}-{{$properti->nomer}}</div>
-                                </div>
+                                </div> --}}
                                 <div class="item row">
                                     <div class="col-6 font-weight-bold">Jalur Mobil</div>
                                     <div class="col-6">Ya</div>

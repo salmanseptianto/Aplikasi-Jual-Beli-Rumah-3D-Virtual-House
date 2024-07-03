@@ -50,12 +50,8 @@ Route::controller(AdminController::class)->group(function () {
     Route::post('admin/updateproperti/{id}', 'updateproperti');
     Route::get('admin/hapusproperti/{id}', 'hapusproperti');
 
-    Route::get('admin/hapuspengguna/{id}', 'hapuspengguna');
-
-    Route::get('admin/pengguna', 'pengguna');
     Route::get('admin/user', 'user');
-    Route::get('admin/tambahagent', 'tambahpengguna');
-    Route::post('admin/simpanpengguna', 'simpanpengguna');
+
     Route::get('admin/ubahpengguna/{id}', 'ubahpengguna');
     Route::post('admin/updatepengguna/{id}', 'updatepengguna');
     Route::get('admin/hapuspengguna/{id}', 'hapuspengguna');
@@ -66,44 +62,6 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('admin/pembayaran/{id}', 'pembayaran');
     Route::post('admin/simpanpembayaran/{id}', 'simpanpembayaran');
     Route::post('admin/selesai', 'selesai');
-});
-
-Route::controller(AgentController::class)->group(function () {
-
-    Route::get('agent', 'index');
-
-    Route::get('agent/blog', 'blog');
-    Route::get('agent/tambahblog', 'tambahblog');
-    Route::post('agent/simpanblog', 'simpanblog');
-    Route::get('agent/ubahblog/{id}', 'ubahblog');
-    Route::post('agent/updateblog/{id}', 'updateblog');
-    Route::get('agent/hapusblog/{id}', 'hapusblog');
-
-    Route::get('agent/akun', 'akun');
-    Route::post('agent/ubahakun/{id}', 'ubahakun');
-
-    Route::get('agent/properti', 'properti');
-    Route::get('agent/tambahproperti', 'tambahproperti');
-    Route::post('agent/simpanproperti', 'simpanproperti');
-    Route::get('agent/ubahproperti/{id}', 'ubahproperti');
-    Route::post('agent/updateproperti/{id}', 'updateproperti');
-    Route::get('agent/hapusproperti/{id}', 'hapusproperti');
-
-    Route::get('agent/hapuspengguna/{id}', 'hapuspengguna');
-
-    Route::get('agent/pengguna', 'pengguna');
-    Route::get('agent/tambahpengguna', 'tambahpengguna');
-    Route::post('agent/simpanpengguna', 'simpanpengguna');
-    Route::get('agent/ubahpengguna/{id}', 'ubahpengguna');
-    Route::post('agent/updatepengguna/{id}', 'updatepengguna');
-    Route::get('agent/hapuspengguna/{id}', 'hapuspengguna');
-
-    Route::get('agent/logout', 'logout');
-
-    Route::get('agent/pembelian', 'pembelian');
-    Route::get('agent/pembayaran/{id}', 'pembayaran');
-    Route::post('agent/simpanpembayaran/{id}', 'simpanpembayaran');
-    Route::post('agent/selesai', 'selesai');
 });
 
 Route::controller(HomeController::class)->group(function () {

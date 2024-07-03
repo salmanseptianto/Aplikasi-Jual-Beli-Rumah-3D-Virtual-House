@@ -95,41 +95,6 @@
                             </script>
                         </div>
                         <div class="form-group">
-                            <label>Detail Properti</label>
-                            <p class="alert alert-danger">* rubah Deskripsi sesuai kebutuhan anda !!!</p>
-                            <div class="align-items-center">
-                                <div class="col-auto">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-home" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                        <select class="form-control" name="daerah">
-                                            <option value="" disabled selected>Kapling
-                                            </option>
-                                            <?php
-                                            $letters = range('A', 'T');
-                                            
-                                            foreach ($letters as $letter) {
-                                                echo "<option value='$letter'>$letter</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                        <select class="form-control" name="nomer">
-                                            <option value="{{ $properti->nomer }}" disabled selected>
-                                                Nomer</option>
-                                            @for ($i = 1; $i <= 47; $i++)
-                                                <option value="{{ $i }}"
-                                                    {{ $properti->nomer == $i ? 'selected' : '' }}>{{ $i }}
-                                                </option>
-                                            @endfor
-                                        </select>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label>link 3D</label>
                             <input type="text" class="form-control" name="links" value="{{ $properti->links }}">
                         </div>

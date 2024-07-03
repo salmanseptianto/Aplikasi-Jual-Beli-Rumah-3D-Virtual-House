@@ -99,51 +99,18 @@
                             });
                         </script>
                         <div class="form-group">
-                            <label>Detail Properti</label>
-                            <p class="alert alert-danger">* rubah Deskripsi sesuai kebutuhan anda !!!</p>
-                            <div class="align-items-center">
-                                <div class="col-auto">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-home" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                        <select class="form-control" name="daerah">
-                                            <option value="" disabled selected>Kapling</option>
-                                            <?php
-                                            $letters = range('A', 'T');
-                                            foreach ($letters as $letter) {
-                                                echo "<option value='$letter'>$letter</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                        <select class="form-control" name="nomer">
-                                            <option value="" disabled selected>Nomer</option>
-                                            <?php
-                                            $letters = range('1', '47');
-                                            
-                                            foreach ($letters as $letter) {
-                                                echo "<option value='$letter'>$letter</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
+                            <label>link 3D</label>
+                            <input type="text" class="form-control" name="links" id="links" rows="100"></input>
+                        </div>
+                        <div class="form-group">
+                            <label>Foto</label>
+                            <div class="letak-input" style="margin-bottom: 10px;">
+                                <input type="file" class="form-control"
+                                    name="foto"accept="image/jpeg, image/png, image/jpg, image/gif">
                             </div>
-                            <div class="form-group">
-                                <label>link 3D</label>
-                                <input type="text" class="form-control" name="links" id="links"
-                                    rows="100"></input>
-                            </div>
-                            <div class="form-group">
-                                <label>Foto</label>
-                                <div class="letak-input" style="margin-bottom: 10px;">
-                                    <input type="file" class="form-control"
-                                        name="foto"accept="image/jpeg, image/png, image/jpg, image/gif">
-                                </div>
-                            </div>
-                            <button class="btn btn-danger" name="save"><i
-                                    class="glyphicon glyphicon-saved"></i>Simpan</a></button>
+                        </div>
+                        <button class="btn btn-danger" name="save"><i
+                                class="glyphicon glyphicon-saved"></i>Simpan</a></button>
                     </form>
                 </div>
             </div>

@@ -54,7 +54,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $propertis = DB::table('properti')->where('checkout_status', 0)->paginate(3);
+        $propertis = DB::table('properti')->paginate(3);
         $data = [
             'properti' => $propertis,
         ];
@@ -136,7 +136,7 @@ class HomeController extends Controller
         Log::info('Password: ' . $password);
 
         $akun = DB::table('pengguna')
-        ->where('email', $email)
+            ->where('email', $email)
             ->where('password', $password) // Pastikan password tidak dienkripsi
             ->first();
 
@@ -149,9 +149,6 @@ class HomeController extends Controller
             } elseif ($akun->level == "Admin") {
                 session(['admin' => $akun]);
                 return redirect('admin')->with('alert', 'Selamat Anda Berhasil Login');
-            } elseif (strtolower($akun->level) == "agent") { // Menggunakan strtolower untuk case-insensitive
-                session(['agent' => $akun]);
-                return redirect('agent')->with('alert', 'Selamat Anda Berhasil Login');
             } else {
                 Log::info('Level pengguna tidak dikenali: ' . $akun->level);
             }
@@ -260,8 +257,8 @@ class HomeController extends Controller
         $idpengguna = session('pengguna')->id;
 
         $riwayat = DB::table('pembelianproperti')
-            ->join('pembelian', 'pembelianproperti.idpembelian', '=', 'pembelian.idpembelian')
-            ->where('pembelian.id', $idpengguna)
+        ->join('pembelian', 'pembelianproperti.idpembelian', '=', 'pembelian.idpembelian')
+        ->where('pembelian.id', $idpengguna)
             ->where('pembelianproperti.idproperti', $idproperti)
             ->select('pembelian.statusbeli')
             ->get();
@@ -270,15 +267,18 @@ class HomeController extends Controller
         $pesan = 'Properti sudah ada dalam riwayat pembelian mohon lengkapi berkas berkas terlebih dahulu.';
 
         foreach ($riwayat as $r) {
-            if ($r->statusbeli === 'Pesanan Di Tolak') {
-                $bolehMemesan = true;
-            } elseif ($r->statusbeli === 'Sudah Upload Bukti Pembayaran') {
+            if ($r->statusbeli !== 'Selesai') {
                 $bolehMemesan = false;
-                $pesan = 'Properti sudah ada dalam riwayat pembelian mohon menunggu konfirmasi dari admin.';
-                break;
-            } else {
-                $bolehMemesan = false;
-                break;
+                if ($r->statusbeli === 'Pesanan Di Tolak') {
+                    $pesan = 'Pesanan sebelumnya ditolak. Anda dapat memesan lagi.';
+                    $bolehMemesan = true;
+                } elseif ($r->statusbeli === 'Sudah Upload Bukti Pembayaran') {
+                    $pesan = 'Properti sudah ada dalam riwayat pembelian. Mohon menunggu konfirmasi dari admin.';
+                    break;
+                } else {
+                    $pesan = 'Properti sudah ada dalam riwayat pembelian. Mohon lengkapi berkas-berkas terlebih dahulu.';
+                    break;
+                }
             }
         }
 
@@ -294,8 +294,9 @@ class HomeController extends Controller
             }
         }
 
-        return redirect('home/properti');
+        return redirect('home');
     }
+
 
     public function keranjang()
     {

@@ -195,6 +195,11 @@ p {
   margin-bottom: 20px;
 }
 
+ul,
+li {
+  border: 0 !important;
+}
+
 .faq-item button {
   width: 100%;
   text-align: left;

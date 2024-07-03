@@ -18,7 +18,7 @@
                                 <th>Telepon</th>
                                 <th>Alamat</th>
                                 {{-- <th>Level</th> --}}
-                                {{-- <th>Aksi</th> --}}
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,10 +40,10 @@
                                     </td>
                                     <td>{{ $pecah->alamat }}</td>
                                     {{-- <td>{{ $pecah->level }}</td> --}}
-                                    {{-- <td>
+                                    <td>
                                         <a href="{{ url('admin/hapuspengguna/' . $pecah->id) }}" class="btn btn-danger"
                                             onclick="return confirm('Hapus Data?')">Hapus</a>
-                                    </td> --}}
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
