@@ -33,6 +33,7 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('admin/hapusblog/{id}', 'hapusblog');
 
     Route::get('home/blog', 'blogs');
+
     Route::get('home/isiblog/{id}', 'isiblog');
 });
 
@@ -69,6 +70,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('home', 'index')->name('home');
     Route::get('home/properti', 'properti');
     Route::get('home/detail/{id}', 'detail');
+    Route::get('home/about', 'about');
 
 
     Route::get('home/login', 'login')->name('login');

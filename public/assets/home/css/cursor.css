@@ -1,4 +1,4 @@
-.circle {
+/* .circle {
   height: 24px;
   width: 24px;
   border-radius: 24px;
@@ -8,14 +8,14 @@
   left: 0;
   pointer-events: none;
   z-index: 99999999;
-  /* so that it stays on top of all other elements */
-}
+  
+} */
 
 /* Start https://www.cursors-4u.com */
-* {
+/* * {
   cursor: none;
 
-}
+} */
 
 /* End https://www.cursors-4u.com */
 

@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
+
+    public function about()
+    {
+        return view('home.about');
+    }
     public function cari(Request $request)
     {
         $search = $request->input('search');

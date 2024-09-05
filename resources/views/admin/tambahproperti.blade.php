@@ -1,4 +1,4 @@
-@extends('admin.templates.index')
+php@extends('admin.templates.index')
 
 @section('page-content')
     @if ($errors->any())

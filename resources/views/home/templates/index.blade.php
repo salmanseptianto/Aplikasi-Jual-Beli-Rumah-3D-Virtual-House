@@ -28,20 +28,6 @@
     <link rel="stylesheet" href="{{ asset('assets/home/css/cursor.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/home/css/properti.css') }}">
 </head>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
 
 <body>
     <div class="wrap">
@@ -58,8 +44,10 @@
     <nav class="navbar navbar-expand-lg navbar-danger ftco_navbar bg-white ftco-navbar-light" id="ftco-navbar"
         style="background-color: red;">
         <div class="container">
-            <a class="navbar-brand text-black" href="{{ url('home') }}"> <img src="{{ asset('foto/logo.png') }}"
-                    width="30px" style="border-radius: 10px;">&nbsp; Triehans Tanjung</a>
+            <a class="navbar-brand text-black" href="{{ url('home') }}">
+                <img src="{{ asset('foto/logo.png') }}" class="logo-img" alt="HR GROUP Logo">
+                &nbsp; HR GROUP
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-list"></i>
@@ -67,10 +55,20 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
+
                     <li class="nav-item active"><a href="{{ url('home') }}" class="nav-link text-light">Home</a></li>
-                    {{-- <li class="nav-item active"><a href="{{ url('home/properti') }}"
+                    {{-- <li class="nav-item active"><a href=""
                             class="nav-link text-light">Properti</a>
                     </li> --}}
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown04"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="{{ url('home/properti') }}">properti</a>
+                            <a class="dropdown-item" href="">Agent</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active"><a href="{{ url('home/about') }}" class="nav-link text-light">About</a>
                     <li class="nav-item active"><a href="{{ url('home/blog') }}" class="nav-link text-light">Blog</a>
                     </li>
                     @if (session('pengguna'))

@@ -17,7 +17,7 @@
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-8 ftco-animate d-flex align-items-end">
                     <div class="text w-100 text-center">
-                        <h1 class="mb-4">Selamat Datang Di <span>Triehans Tanjung Village</span>.</h1>
+                        <h1 class="mb-4">Selamat Datang Di <span>HR GROUP</span>.</h1>
                         <p><a href="{{ url('home/properti') }}" class="btn btn-danger py-2 px-4">Properti Kami</a></p>
                     </div>
                 </div>
@@ -72,15 +72,19 @@
                     <img src="{{ asset('foto/home.jpg') }}" width="100%" style="border-radius: 10px">
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
-                    <div class="heading-section">
-                        <h3 class="mt-4">Tentang kami</h3>
-                        <p class="text-justify">
-                            Triehans Village merupakan salah satu perumahan yang dikembangkan oleh PT. Kuasa Triehans
-                            Semesta.
-                            Berada di daerah Kota Brebes menjadikan Triehans Village memiliki akses yang strategis. Selain
-                            itu, kualitas bangunan yang lebih unggul dibanding perumahan lain menjadi daya tarik tersendiri.
-                        </p>
+                    <div class="container text-justify">
+                        <div class="heading-section">
+                            <p><strong>HR GROUP</strong> adalah perusahaan yang didirikan dengan tujuan untuk menjalankan
+                                usaha di
+                                bidang pengembangan properti bersubsidi dan real estate.</p>
+                            <p>Didirikan oleh Bapak H. Heri Agus Nur Rokhman (Owner) dan Ibu Yeni Varita (Direktur) HR Group
+                                serta
+                                didukung dengan pengalaman yang cukup banyak di bidang manajemen properti, HR Group akan
+                                menjadi
+                                perusahaan yang terkenal atas kualitas produk perumahannya.</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
