@@ -41,41 +41,42 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-danger ftco_navbar bg-white ftco-navbar-light" id="ftco-navbar"
+    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-white ftco-navbar-light" id="ftco-navbar"
         style="background-color: red;">
         <div class="container">
-            <a class="navbar-brand text-black" href="{{ url('home') }}">
+            <a class="navbar-brand font-weight-bold" href="{{ url('home') }}">
                 <img src="{{ asset('foto/logo.png') }}" class="logo-img" alt="HR GROUP Logo">
                 &nbsp; HR GROUP
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-list"></i>
+                <i class="fa fa-list" style="color: #686D76;"></i>
             </button>
-
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item active"><a href="{{ url('home') }}" class="nav-link text-light">Home</a></li>
-                    {{-- <li class="nav-item active"><a href=""
-                            class="nav-link text-light">Properti</a>
-                    </li> --}}
+                    <li class="nav-item active">
+                        <a href="{{ url('home') }}" class="nav-link text-light font-weight-bold">Home</a>
+                    </li>
                     <li class="nav-item active dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown04"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages </a>
+                        <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="dropdown04"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="{{ url('home/properti') }}">properti</a>
-                            <a class="dropdown-item" href="{{url('home/agent')}}">Agent</a>
+                            <a class="dropdown-item" href="{{ url('home/properti') }}">Properti</a>
+                            <a class="dropdown-item" href="{{ url('home/agent') }}">Agent</a>
                         </div>
                     </li>
-                    <li class="nav-item active"><a href="{{ url('home/about') }}" class="nav-link text-light">About</a>
-                    <li class="nav-item active"><a href="{{ url('home/blog') }}" class="nav-link text-light">Blog</a>
+                    <li class="nav-item active">
+                        <a href="{{ url('home/about') }}" class="nav-link text-light font-weight-bold">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{{ url('home/blog') }}" class="nav-link text-light font-weight-bold">Blog</a>
                     </li>
                     @if (session('pengguna'))
                         <?php $akun = session('pengguna'); ?>
-                        <li class="nav-item active dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown04"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Akun </a>
+                        <li class="nav-item active dropdown text-dark">
+                            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#"
+                                id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Akun</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
                                 <a class="dropdown-item" href="{{ url('home/akun') }}">Profil Akun</a>
                                 <a class="dropdown-item" href="{{ url('home/keranjang') }}">Keranjang</a>
@@ -84,18 +85,18 @@
                             </div>
                         </li>
                     @else
-                        <li class="nav-item active"><a href="{{ url('home/daftar') }}"
-                                class="nav-link text-light">Daftar</a>
+                        <li class="nav-item active">
+                            <a href="{{ url('home/daftar') }}" class="nav-link text-light font-weight-bold">Daftar</a>
                         </li>
-                        <li class="nav-item active"><a href="{{ url('home/login') }}"
-                                class="nav-link text-light">Login</a>
+                        <li class="nav-item active">
+                            <a href="{{ url('home/login') }}" class="nav-link text-light font-weight-bold">Login</a>
                         </li>
                     @endif
-
                 </ul>
             </div>
         </div>
     </nav>
+
 
     @yield('page-content')
 
@@ -166,23 +167,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-        integrity="sha384-YU+2bMdsRXP9A9rIEU5zLDTb4gZZk6UtCCFi9aTE8UDnvPbJ8C/6RlupMvJNQ6KR" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyO8U6lZIeRqGgjz8I4N5aVRrM14DlTq" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.0.4/dist/purecounter_vanilla.js"></script>
-    <script>
-        new PureCounter();
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="{{ asset('assets/home/js/script.js') }}"></script>
     <script>
         function confirmLogout() {
             Swal.fire({
@@ -199,6 +183,26 @@
                 }
             });
         }
+
+        // Function to handle navbar text color change on scroll
+        window.onscroll = function() {
+            var navbar = document.getElementById("ftco-navbar");
+            var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+            if (document.documentElement.scrollTop > 50) {
+                // Change text color to black
+                navLinks.forEach(function(link) {
+                    link.classList.add("text-dark");
+                    link.classList.remove("text-light");
+                });
+            } else {
+                // Reset text color to light
+                navLinks.forEach(function(link) {
+                    link.classList.remove("text-dark");
+                    link.classList.add("text-light");
+                });
+            }
+        };
     </script>
 </body>
 

@@ -1,4 +1,3 @@
-
 /* Ensures the logo is large and maintains aspect ratio */
 .logo-img {
   width: 60px;
@@ -8,6 +7,7 @@
   border-radius: 10px;
   /* Optional: maintains existing rounded corners */
 }
+
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -2218,6 +2218,67 @@ pre code {
 }
 
 @media (max-width: 767.98px) {
+
+  #ftco-navbar {
+    background-color: white !important;
+  }
+
+  .navbar-nav .nav-link {
+    color: black !important;
+    /* Sesuaikan warna teks */
+  }
+
+  .navbar-brand,
+  .navbar-toggler {
+    color: black !important;
+    /* Warna ikon dan teks brand */
+  }
+
+  .ftco-section {
+    padding: 6em 0;
+  }
+
+  .img-3 {
+    height: 400px;
+  }
+
+  .nav-pills .nav-link {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .nav-pills .nav-link.active:after {
+    opacity: 0;
+  }
+
+  .product-details .form-group .icon {
+    right: 10px;
+  }
+
+  .ftco-navbar-light .btn-group .dropdown-menu:after,
+  .ftco-navbar-light .btn-group .dropdown-menu:before {
+    right: 70px;
+  }
+
+  .ftco-navbar-light .btn-group .dropdown-menu {
+    right: -70px !important;
+  }
+
+  .social-media {
+    width: 50%;
+  }
+
+  .wrap .reg {
+    width: 50%;
+    text-align: right;
+  }
+
+  .navbar-expand-md>.container,
+  .navbar-expand-md>.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   .table-responsive-md {
     display: block;
     width: 100%;
@@ -5011,15 +5072,6 @@ input[type="button"].btn-block {
 
   .navbar-expand-sm .navbar-toggler {
     display: none;
-  }
-}
-
-@media (max-width: 767.98px) {
-
-  .navbar-expand-md>.container,
-  .navbar-expand-md>.container-fluid {
-    padding-right: 0;
-    padding-left: 0;
   }
 }
 
@@ -11585,12 +11637,6 @@ h5,
   font-size: 12px;
 }
 
-@media (max-width: 767.98px) {
-  .wrap .reg {
-    width: 50%;
-    text-align: right;
-  }
-}
 
 .wrap .reg p {
   font-weight: 200;
@@ -11604,12 +11650,6 @@ h5,
 
 .social-media {
   display: inline-block;
-}
-
-@media (max-width: 767.98px) {
-  .social-media {
-    width: 50%;
-  }
 }
 
 .social-media p {
@@ -11712,12 +11752,6 @@ h5,
   margin-top: 20px;
 }
 
-@media (max-width: 767.98px) {
-  .ftco-navbar-light .btn-group .dropdown-menu {
-    right: -70px !important;
-  }
-}
-
 .ftco-navbar-light .btn-group .dropdown-menu:after,
 .ftco-navbar-light .btn-group .dropdown-menu:before {
   content: ' ';
@@ -11728,14 +11762,6 @@ h5,
   position: absolute;
   right: 12px;
   z-index: -1;
-}
-
-@media (max-width: 767.98px) {
-
-  .ftco-navbar-light .btn-group .dropdown-menu:after,
-  .ftco-navbar-light .btn-group .dropdown-menu:before {
-    right: 70px;
-  }
 }
 
 .ftco-navbar-light .btn-group .dropdown-menu:before {
@@ -12643,12 +12669,6 @@ h5,
   color: #000000;
 }
 
-@media (max-width: 767.98px) {
-  .product-details .form-group .icon {
-    right: 10px;
-  }
-}
-
 .product-details .form-group .select-wrap {
   position: relative;
 }
@@ -12731,19 +12751,6 @@ h5,
 
 .nav-pills .nav-link.active:after {
   opacity: 1;
-}
-
-@media (max-width: 767.98px) {
-  .nav-pills .nav-link.active:after {
-    opacity: 0;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .nav-pills .nav-link {
-    display: block;
-    margin-bottom: 5px;
-  }
 }
 
 .tab-content {
@@ -13149,12 +13156,6 @@ textarea.form-control {
   background: #000000;
 }
 
-@media (max-width: 767.98px) {
-  .img-3 {
-    height: 400px;
-  }
-}
-
 .wrap-about .year {
   font-size: 30px;
   color: #000000;
@@ -13221,11 +13222,7 @@ textarea.form-control {
   position: relative;
 }
 
-@media (max-width: 767.98px) {
-  .ftco-section {
-    padding: 6em 0;
-  }
-}
+
 
 .ftco-no-pt {
   padding-top: 0;
