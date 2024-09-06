@@ -71,6 +71,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('home/properti', 'properti');
     Route::get('home/detail/{id}', 'detail');
     Route::get('home/about', 'about');
+    Route::get('home/agent', 'agent');
 
 
     Route::get('home/login', 'login')->name('login');

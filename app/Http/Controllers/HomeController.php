@@ -15,6 +15,12 @@ class HomeController extends Controller
     {
         return view('home.about');
     }
+
+    public function Agent()
+    {
+        return view('home.agent');
+    }
+
     public function cari(Request $request)
     {
         $search = $request->input('search');
@@ -262,8 +268,8 @@ class HomeController extends Controller
         $idpengguna = session('pengguna')->id;
 
         $riwayat = DB::table('pembelianproperti')
-        ->join('pembelian', 'pembelianproperti.idpembelian', '=', 'pembelian.idpembelian')
-        ->where('pembelian.id', $idpengguna)
+            ->join('pembelian', 'pembelianproperti.idpembelian', '=', 'pembelian.idpembelian')
+            ->where('pembelian.id', $idpengguna)
             ->where('pembelianproperti.idproperti', $idproperti)
             ->select('pembelian.statusbeli')
             ->get();
