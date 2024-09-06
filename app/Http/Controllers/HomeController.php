@@ -159,14 +159,22 @@ class HomeController extends Controller
         if ($akun) {
             Log::info('Akun ditemukan: ' . json_encode($akun));
 
-            if ($akun->level == "Pelanggan") {
-                session(['pengguna' => $akun]);
-                return redirect('home')->with('alert', 'Selamat Anda Berhasil Login');
-            } elseif ($akun->level == "Admin") {
-                session(['admin' => $akun]);
-                return redirect('admin')->with('alert', 'Selamat Anda Berhasil Login');
-            } else {
-                Log::info('Level pengguna tidak dikenali: ' . $akun->level);
+            switch ($akun->level) {
+                case "Pelanggan":
+                    session(['pengguna' => $akun]);
+                    return redirect('home')->with('alert', 'Selamat Anda Berhasil Login');
+                case "Marketing":
+                    session(['marketing' => $akun]);
+                    return redirect('marketing')->with('alert', 'Selamat Anda Berhasil Login');
+                case "Admin":
+                    session(['admin' => $akun]);
+                    return redirect('admin')->with('alert', 'Selamat Anda Berhasil Login');
+                case "Akuntan":
+                    session(['akuntan' => $akun]);
+                    return redirect('akuntan')->with('alert', 'Selamat Anda Berhasil Login');
+                default:
+                    Log::info('Level pengguna tidak dikenali: ' . $akun->level);
+                    break;
             }
         } else {
             Log::warning('Akun tidak ditemukan atau email/password salah');
