@@ -97,7 +97,6 @@
         </div>
     </nav>
 
-
     @yield('page-content')
 
     <footer class="ftco-footer">
