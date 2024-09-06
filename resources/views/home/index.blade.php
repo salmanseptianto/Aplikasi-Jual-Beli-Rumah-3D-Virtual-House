@@ -12,7 +12,8 @@
     </script>
 @endif
 @section('page-content')
-    <div class="hero-wrap" style="background-image: url('{{ asset('foto/home2.jpg') }}');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url('{{ asset('foto/images/home2.jpg') }}');"
+        data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-8 ftco-animate d-flex align-items-end">
@@ -64,12 +65,11 @@
             </div>
         </div>
     </section>
-
-    <section class="py-5">
+    <section class="position-relative">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('foto/home.jpg') }}" width="100%" style="border-radius: 10px">
+                    <img src="{{ asset('foto/images/home.jpg') }}" width="100%" style="border-radius: 10px">
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
                     <div class="container text-justify">
@@ -84,7 +84,6 @@
                                 perusahaan yang terkenal atas kualitas produk perumahannya.</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -294,7 +293,8 @@
             </div>
         </div>
     </section>
-    {{-- <section class="py-4">
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+    <section class="py-2">
         <div class="container aos-init aos-animate" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -327,5 +327,5 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 @endsection

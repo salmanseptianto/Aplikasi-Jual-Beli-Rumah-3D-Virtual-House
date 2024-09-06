@@ -13,14 +13,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="{{ asset('assets/home/css/animate.css') }}">
+    <!-- Link CSS PureCounter -->
+    <link rel="stylesheet" href="https://unpkg.com/purecounterjs@1.1.9/dist/purecounter.css">
 
     <link rel="stylesheet" href="{{ asset('assets/home/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/home/css/purecounter.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/home/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/home/css/magnific-popup.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/home/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/home/css/style.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('foto/logo.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('foto/images/logo.png') }}">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -45,7 +48,7 @@
         style="background-color: red;">
         <div class="container">
             <a class="navbar-brand font-weight-bold" href="{{ url('home') }}">
-                <img src="{{ asset('foto/logo.png') }}" class="logo-img" alt="HR GROUP Logo">
+                <img src="{{ asset('foto/images/logo.png') }}" class="logo-img" alt="HR GROUP Logo">
                 &nbsp; HR GROUP
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -99,18 +102,19 @@
 
     @yield('page-content')
 
-    <footer class="ftco-footer">
+    <footer class="ftco-footer text-white py-3 justify-center">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Alamat</h2>
-                        <div class="block-23 mb-3">
-                            <ul>
-                                <li><span class="icon fa fa-map marker"></span><span>
-                                        <a class="text-white"
-                                            href="https://maps.app.goo.gl/vNCYYzTcu22j5J1g7">JL.CENDRAWASIH PANTURA
-                                            BREBES-TEGAL TANJUNG, BREBES (SEBELAH TIMUR KANTOR KECAMATAN TANJUNG)
+                <div class="col-md-6 mb-4">
+                    <div class="ftco-footer-widget">
+                        <h2 class="ftco-heading-2 mb-1">Alamat</h2>
+                        <div class="block-23 mb-2">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class="icon fa fa-map-marker"></span>
+                                    <span>
+                                        <a class="text-white" href="https://maps.app.goo.gl/vNCYYzTcu22j5J1g7">
+                                            Jl.Yos Sudarso, Ruko Sapphire no.7 Pasarbatang-Brebes
                                         </a>
                                     </span>
                                 </li>
@@ -118,24 +122,43 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Kontak</h2>
+                <!-- Kontak 1 -->
+                <div class="col-md-3 mb-4">
+                    <div class="ftco-footer-widget">
+                        <h2 class="ftco-heading-2 mb-1">Kontak</h2>
                         <div class="block-23 mb-3">
-                            <ul>
-                                <li><span class="icon fa fa-whatsapp"></span><span
-                                        class="text">0878-4323-2612</span>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class="icon fa fa-whatsapp"></span>
+                                    <span class="text">0811-124-808</span>
                                 </li>
-                                <li><span class="icon fa fa-envelope"></span><span
-                                        class="text">triehanstanjung@gmail.com</span>
+                                <li>
+                                    <span class="icon fa fa-envelope"></span>
+                                    <span class="text">Hrgroupsukses234@gmail.com</span>
                                 </li>
-
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kontak 2 -->
+                <div class="col-md-3 mb-4">
+                    <div class="ftco-footer-widget">
+                        <h2 class="ftco-heading-2 mb-1">Kontak</h2>
+                        <div class="block-23 mb-3">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class="icon fa fa-whatsapp"></span>
+                                    <span class="text">0811-124-808</span>
+                                </li>
+                                <li>
+                                    <span class="icon fa fa-envelope"></span>
+                                    <span class="text">Hrgroupsukses234@gmail.com</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </footer>
     <!-- loader -->
@@ -203,6 +226,13 @@
             }
         };
     </script>
+    <script>
+        // Inisialisasi PureCounter
+        new PureCounter();
+    </script>
+    <!-- Script PureCounter -->
+    <script src="https://unpkg.com/purecounterjs@1.1.9/dist/purecounter.js"></script>
+
 </body>
 
 </html>

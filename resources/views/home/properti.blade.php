@@ -1,26 +1,26 @@
 @extends('home.templates.index')
 
 @section('page-content')
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('foto/home2.jpg') }}');"
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('foto/images/home2.jpg') }}');"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <h2 class="mb-0 bread">Properti</h2>
                     <p class="breadcrumbs mb-0"><span class="mr-2"><a>Home <i class="fa fa-chevron-right"></i></a></span>
                         <span>Properti <i class="fa fa-chevron-right"></i></span>
                     </p>
-                    <h2 class="mb-0 bread">Properti</h2>
                 </div>
             </div>
         </div>
     </section>
-
+{{-- 
     <div class="text-center mt-5">
         <a href="{{ asset('assets/home/images/kapling.jpg') }}" target="_blank" class="btn btn-info rounded-pill px-4 py-2">
             <h4 class="m-0 text-white">Lihat Kapling</h4>
         </a>
-    </div>
+    </div> --}}
 
     <div class="container mt-5 mb-2">
         <div class="row justify-content-center">

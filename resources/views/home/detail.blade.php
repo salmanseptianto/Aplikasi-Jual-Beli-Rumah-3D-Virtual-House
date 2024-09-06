@@ -1,16 +1,16 @@
 @extends('home.templates.index')
 
 @section('page-content')
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ url('foto/home2.jpg') }}');"
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ url('foto/images/home2.jpg') }}');"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <h2 class="mb-0 bread">Detail Properti</h2>
                     <p class="breadcrumbs mb-0"><span class="mr-2"><a>Home <i
                                     class="fa fa-chevron-right"></i></a></span><span>Detail Properti <i
                                 class="fa fa-chevron-right"></i></span></p>
-                    <h2 class="mb-0 bread">Detail Properti</h2>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
 
                                 <div class="item row">
                                     <div class="col-6 font-weight-bold">Terdaftar pada</div>
-                                    <div class="col-6">{{$properti->tanggal}}</div>
+                                    <div class="col-6">{{ $properti->tanggal }}</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="item row">
                                     <div class="col-6 font-weight-bold">Jenis Perumahan</div>
-                                    <div class="col-6">{{$properti->perumahan}}</div>
+                                    <div class="col-6">{{ $properti->perumahan }}</div>
                                 </div>
                                 <div class="item row">
                                     <div class="col-6 font-weight-bold">Listrik</div>

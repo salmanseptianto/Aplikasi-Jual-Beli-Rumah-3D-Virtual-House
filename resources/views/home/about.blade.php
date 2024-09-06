@@ -2,7 +2,7 @@
 
 @section('page-content')
     <!-- Hero Section -->
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('foto/home2.jpg') }}');"
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('foto/images/home2.jpg') }}');"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -19,6 +19,32 @@
 
     <!-- About Us Section -->
     <section id="home-section" class="ftco-section">
+        <div class="container py-2">
+            <div class="row">
+                <!-- Gambar Profil -->
+                <div class="col-md-6 mb-4 d-flex justify-content-center">
+                    <div class="text-center">
+                        <img src={{ asset('foto/images/owner.png') }} class="img-fluid"
+                            alt="Heri Agus Nur Rohman, S.P. (Owner HR Group)">
+                        <figcaption class="mt-2">Heri Agus Nur Rohman, S.P. (Owner HR Group)</figcaption>
+                    </div>
+                </div>
+
+                <!-- Konten Visi dan Misi -->
+                <div class="col-md-6 text-center"> <!-- Changed text-align-center to text-center -->
+                    <div class="mb-4">
+                        <h2 class="mb-3 font-weight-bold">Visi</h2>
+                        <p>Innasholati wanusuki wamahyaya wamamati lillahirobbila’lamin</p>
+                    </div>
+                    <div>
+                        <h2 class="mb-3 font-weight-bold">Misi</h2>
+                        <p>Membangun Kerajaan Bisnis Untuk Kepentingan Dakwah dan Mensejahterakan Umat</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
         <div class="container">
             <!-- About Company Heading -->
             <div class="row mb-4">
