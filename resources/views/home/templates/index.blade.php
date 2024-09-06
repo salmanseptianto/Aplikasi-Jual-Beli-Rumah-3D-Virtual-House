@@ -85,12 +85,14 @@
                                 <a class="dropdown-item" href="{{ url('home/akun') }}">Profil Akun</a>
                                 <a class="dropdown-item" href="{{ url('home/keranjang') }}">Keranjang</a>
                                 <a class="dropdown-item" href="{{ url('home/riwayat') }}">Riwayat Pembelian</a>
-                                <a class="dropdown-item" href="#" onclick="confirmLogout()">Logout</a>
+                                <a class="dropdown-item" href="{{ url('home/logout') }}"
+                                    onclick="confirmLogout()">Logout</a>
                             </div>
                         </li>
                     @else
                         <li class="nav-item active">
-                            <a href="{{ url('home/daftar') }}" class="nav-link text-light font-weight-bold">Daftar</a>
+                            <a href="{{ url('home/daftar') }}"
+                                class="nav-link text-light font-weight-bold">Daftar</a>
                         </li>
                         <li class="nav-item active">
                             <a href="{{ url('home/login') }}" class="nav-link text-light font-weight-bold">Login</a>

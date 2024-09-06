@@ -1,6 +1,5 @@
 @extends('home.templates.index')
 
-<h1> Nama saya salman septianto</h1>
 
 @if (Session::has('alert'))
     <script>
