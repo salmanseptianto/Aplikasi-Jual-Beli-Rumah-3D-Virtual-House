@@ -91,7 +91,7 @@
 
     <section class="mb-5">
         <div class="container">
-            <h1 class="mb-0 text-center mb-5">HARGA & FASILITAS</h1>
+            <h1 class="mb-0 text-center mb-5">Lokasi Properti Kami</h1>
             <div class="row">
                 <div class="container">
                     <div class="row">

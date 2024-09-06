@@ -8,10 +8,10 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <h2 class="mb-0 bread">Tentang Kami</h2>
                     <p class="breadcrumbs mb-0"><span class="mr-2"><a>Home <i class="fa fa-chevron-right"></i></a></span>
                         <span>Tentang Kami <i class="fa fa-chevron-right"></i></span>
                     </p>
-                    <h2 class="mb-0 bread">Tentang Kami</h2>
                 </div>
             </div>
         </div>

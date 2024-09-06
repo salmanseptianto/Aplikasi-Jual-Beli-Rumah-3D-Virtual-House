@@ -16,6 +16,11 @@ class HomeController extends Controller
         return view('home.about');
     }
 
+    public function karir()
+    {
+        return view('home.karir');
+    }
+
     public function Agent()
     {
         return view('home.agent');

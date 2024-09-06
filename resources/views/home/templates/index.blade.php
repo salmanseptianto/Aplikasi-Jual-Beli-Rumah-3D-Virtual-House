@@ -64,8 +64,9 @@
                         <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="dropdown04"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="{{ url('home/properti') }}">Properti</a>
-                            <a class="dropdown-item" href="{{ url('home/agent') }}">Agent</a>
+                            <a class="dropdown-item" href="{{ url('home/properti') }}">PROPERTI</a>
+                            <a class="dropdown-item" href="{{ url('home/agent') }}">AGENT</a>
+                            <a class="dropdown-item" href="{{ url('home/karir') }}">INFO LOKER</a>
                         </div>
                     </li>
                     <li class="nav-item active">
